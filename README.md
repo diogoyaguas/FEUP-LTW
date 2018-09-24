@@ -1,5 +1,5 @@
 # FEUP-LTW
-Project for the Web Languages and Technologies (ltw) class of the Master in Informatics and Computer Engineering (MIEIC) at the Faculty of Engineering of the University of Porto (FEUP).
+Project for the Web Languages and Technologies (LTW) class of the Master in Informatics and Computer Engineering (MIEIC) at the Faculty of Engineering of the University of Porto (FEUP).
 <br><br>
 ### Team Members
 Diogo Filipe da Silva Yaguas<br>
