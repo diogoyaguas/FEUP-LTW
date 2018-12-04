@@ -1,15 +1,43 @@
+/* COLORS: 
+#D35763 - vermelho rosado
+#BAD1CD - azul acinzentado
+#B5D2AA - verde
+#818181 - cinzento
+*/
+
 body {
     background-color: #D35763;
+    color: white;
 }
 
-header {
-    background-color: green;
+body > header h1{
+    color: #BAD1CD;
+    text-align: center;
 }
 
-section {
-    background-color: blue;
+section#signup input {
+    color: #818181;
+    margin: 0.5em;
+    width: 15em;
+    height: 3em;
+
 }
 
-nav {
-    background-color: yellow;
+section#signup input[type="text"] {
+    background-color: #B5D2AA;
+}
+
+section#signup input[type="password"] {
+    background-color: #BAD1CD;
+}
+
+section#signup input[type="submit"] {
+    background-color: #BAD1CD;
+}
+
+nav#login a {
+    text-decoration: none;
+    color: #818181;
+    background-color: #BAD1CD;
+    padding: 0.5em;
 }

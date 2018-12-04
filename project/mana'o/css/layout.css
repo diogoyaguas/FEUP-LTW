@@ -1,0 +1,46 @@
+/* general layout (grid) */ 
+
+body {
+    margin: 5em;
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header signup"
+                         "header login"; 
+}
+
+body > header {
+    margin: 2em;
+    grid-area: header;
+    justify-self: right;
+}
+
+section#signup {
+    margin: 2em;
+    grid-area: signup;
+    justify-self: left;
+    align-self: center;
+}
+
+nav#login {
+    margin: 2em;
+    grid-area: login;
+    justify-self: left;
+}
+
+/* form grid */
+
+section#signup form {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr 1fr;
+}
+
+section#signup input[type="text"], section#signup input[type="password"]{
+    justify-self: center;
+    grid-column: 1/span 2;
+}
+
+section#signup input[type="submit"] {
+    grid-column: 2;
+}
