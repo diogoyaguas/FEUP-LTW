@@ -1,5 +1,3 @@
-PRAGMA foreign_keys = ON;
-
 INSERT INTO User (Username, Password, Name, Email) VALUES ('diogoyaguas', 'yaguas98', 'Diogo Yaguas', 'diogo.yaguas@hotmail.com');
 INSERT INTO User (Username, Password, Name, Email) VALUES ('joanasmramos', 'joaninha1998', 'Joana Ramos', 'joanasmramos98@gmail.com');
 INSERT INTO User (Username, Password, Name, Email) VALUES ('mrpinemyapple', 'ananasevida1998', 'Gonçalo Nuno Bernardo', 'mrpinemyapple@gmail.com');
@@ -33,5 +31,3 @@ INSERT INTO Comments (Post_ID, User_ID, Text, Date, Likes) VALUES (1, 5, 'Isto �
 INSERT INTO Comments (Post_ID, User_ID, Text, Date, Likes) VALUES (3, 2, 'Gosto do que leio!', '2018-12-01', '1');
 INSERT INTO Comments (Post_ID, User_ID, Text, Date, Likes) VALUES (2, 3, 'LOOOOOL', '2018-12-02', '0');
 INSERT INTO Comments (Post_ID, User_ID, Text, Date, Likes) VALUES (1, 4, 'Não pode ser lero lero', '2018-11-29', '0');
-
-PRAGMA foreign_keys = ON;

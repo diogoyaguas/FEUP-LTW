@@ -3,7 +3,7 @@
         $passwordhashed = hash('sha256', $password);
         global $dbh;
         try {
-          $stmt = $dbh->prepare('SELECT * FROM user WHERE Username = ? AND Password = ?');
+          $stmt = $dbh->prepare('SELECT * FROM User WHERE Username = ? AND Password = ?');
           $stmt->execute(array($username, $passwordhashed));
           if($stmt->fetch() !== false) {
             return getID($username);
@@ -38,7 +38,7 @@
       function getID($username) {
         global $dbh;
         try {
-          $stmt = $dbh->prepare('SELECT ID FROM User WHERE username = ?');
+          $stmt = $dbh->prepare('SELECT ID FROM User WHERE Username = ?');
           $stmt->execute(array($username));
           if($row = $stmt->fetch()){
             return $row['ID'];
@@ -48,4 +48,11 @@
           return -1;
         }
       }
+
+      function usernameAlreadyExists($username){
+        global $dbh;
+        $stmt = $dbh->prepare('SELECT * FROM User WHERE Username = ?');
+        $stmt->execute([$username]);
+        return $stmt->fetch();
+    }
 ?>
