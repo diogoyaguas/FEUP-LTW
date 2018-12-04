@@ -1,10 +1,10 @@
-INSERT INTO User (Username, Password, Name, Email) VALUES ('diogoyaguas', 'yaguas98', 'Diogo Yaguas', 'diogo.yaguas@hotmail.com');
-INSERT INTO User (Username, Password, Name, Email) VALUES ('joanasmramos', 'joaninha1998', 'Joana Ramos', 'joanasmramos98@gmail.com');
-INSERT INTO User (Username, Password, Name, Email) VALUES ('mrpinemyapple', 'ananasevida1998', 'Gonçalo Nuno Bernardo', 'mrpinemyapple@gmail.com');
-INSERT INTO User (Username, Password, Name, Email) VALUES ('mafaldafalcaotvf', 'professora2012', 'Mafalda Falcão', 'mafaldafferreira@fe.up.pt');
-INSERT INTO User (Username, Password, Name, Email) VALUES ('joao.malheiro', 'whiskey1998', 'João Malheiro', 'joaomalheiro@gmail.com');
-INSERT INTO User (Username, Password, Name, Email) VALUES ('smbea', 'foodie98', 'Beatriz Mendes', 'smbeatriz@gmail.com');
-INSERT INTO User (Username, Password, Name, Email) VALUES ('m._.duarte', 'presinerd98', 'Miguel Duarte', 'miguelduarte@gmail.com');
+INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('diogoyaguas', 'yaguas98', 'Diogo Yaguas', 'diogo.yaguas@hotmail.com', '1.png');
+INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('joanasmramos', 'joaninha1998', 'Joana Ramos', 'joanasmramos98@gmail.com', '2.png');
+INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('mrpinemyapple', 'ananasevida1998', 'Gonçalo Nuno Bernardo', 'mrpinemyapple@gmail.com', '3.png');
+INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('mafaldafalcaotvf', 'professora2012', 'Mafalda Falcão', 'mafaldafferreira@fe.up.pt', '4.png');
+INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('joao.malheiro', 'whiskey1998', 'João Malheiro', 'joaomalheiro@gmail.com', '5.png');
+INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('smbea', 'foodie98', 'Beatriz Mendes', 'smbeatriz@gmail.com', '6.png');
+INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('m._.duarte', 'presinerd98', 'Miguel Duarte', 'miguelduarte@gmail.com', '7.png');
 
 INSERT INTO Quotes (Quote) VALUES ('Keep your face to the sunshine and you cannot see a shadow.');
 INSERT INTO Quotes (Quote) VALUES ('Limit your "always" and your "nevers".');

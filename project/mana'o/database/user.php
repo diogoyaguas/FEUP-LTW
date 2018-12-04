@@ -19,9 +19,9 @@
         global $dbh;
         try {
             $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email) VALUES (:Username,:Password,:Name,:Email)');
-            $stmt->bindParam(':Name', $name);
             $stmt->bindParam(':Username', $username);
             $stmt->bindParam(':Password', $passwordhashed);
+            $stmt->bindParam(':Name', $name);
             $stmt->bindParam(':Email', $email);
           if($stmt->execute()){
             $id = getID($username);

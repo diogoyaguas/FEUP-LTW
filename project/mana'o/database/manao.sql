@@ -11,7 +11,8 @@ CREATE TABLE User (
     Username STRING UNIQUE NOT NULL,
     Password CHAR(255) NOT NULL,
     Name STRING NOT NULL,
-    Email STRING NOT NULL UNIQUE
+    Email STRING NOT NULL UNIQUE,
+    Profile_Pic STRING NOT NULL UNIQUE
 );
 
 -- TABLE: Quotes

@@ -2,7 +2,7 @@
     function getPost($idPost)
     {
         global $dbh;
-        $stmt = $db->prepare('SELECT * FROM Post WHERE ID = ? ');
+        $stmt = $dbh->prepare('SELECT * FROM Post WHERE ID = ? ');
         $stmt->execute([$idPost]);
         while ($row = $stmt->fetch()) {
             
