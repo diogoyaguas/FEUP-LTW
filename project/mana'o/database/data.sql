@@ -1,5 +1,3 @@
-PRAGMA foreign_keys = on;
-
 INSERT INTO User (Username, Password, Name, Email) VALUES ('diogoyaguas', 'yaguas98', 'Diogo Yaguas', 'diogo.yaguas@hotmail.com');
 INSERT INTO User (Username, Password, Name, Email) VALUES ('joanasmramos', 'joaninha1998', 'Joana Ramos', 'joanasmramos98@gmail.com');
 INSERT INTO User (Username, Password, Name, Email) VALUES ('mrpinemyapple', 'ananasevida1998', 'Gonçalo Nuno Bernardo', 'mrpinemyapple@gmail.com');
@@ -8,4 +6,17 @@ INSERT INTO User (Username, Password, Name, Email) VALUES ('joao.malheiro', 'whi
 INSERT INTO User (Username, Password, Name, Email) VALUES ('smbea', 'foodie98', 'Beatriz Mendes', 'smbeatriz@gmail.com');
 INSERT INTO User (Username, Password, Name, Email) VALUES ('m._.duarte', 'presinerd98', 'Miguel Duarte', 'miguelduarte@gmail.com');
 
-PRAGMA foreign_keys = on;
+INSERT INTO Quotes (Quote) VALUES ('Keep your face to the sunshine and you cannot see a shadow.');
+INSERT INTO Quotes (Quote) VALUES ('Limit your "always" and your "nevers".');
+INSERT INTO Quotes (Quote) VALUES ('Spread love everywhere you go.');
+INSERT INTO Quotes (Quote) VALUES ('A champion is defined not by their wins but by how they can recover when they fall.');
+INSERT INTO Quotes (Quote) VALUES ('Each person must live their life as a model for others.');
+INSERT INTO Quotes (Quote) VALUES ('Motivation comes from working on things we care about.');
+INSERT INTO Quotes (Quote) VALUES ('No matter what people tell you, words and ideas can change the world.');
+INSERT INTO Quotes (Quote) VALUES ('With the right kind of coaching and determination you can accomplish anything.');
+INSERT INTO Quotes (Quote) VALUES ('If you look at what you have in life, you''ll always have more.');
+INSERT INTO Quotes (Quote) VALUES ('Life has got all those twists and turns. You''ve got to hold on tight and off you go.');
+INSERT INTO Quotes (Quote) VALUES ('You are enough just as you are.');
+INSERT INTO Quotes (Quote) VALUES ('My mission in life is not merely to survive, but to thrive.');
+INSERT INTO Quotes (Quote) VALUES ('Let us make our future now, and let us make our dreams tomorrow''s reality.');
+INSERT INTO Quotes (Quote) VALUES ('You get what you give.');
