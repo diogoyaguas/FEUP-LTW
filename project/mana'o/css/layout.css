@@ -6,26 +6,24 @@ body {
     grid-template-rows: 5fr 1fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "header signup"
-                         "header login"; 
+                         "login  login"; 
 }
 
 body > header {
-    margin: 2em;
     grid-area: header;
-    justify-self: right;
+    justify-self: center;
 }
 
 section#signup {
-    margin: 2em;
     grid-area: signup;
-    justify-self: left;
+    justify-self: start;
     align-self: center;
 }
 
 nav#login {
-    margin: 2em;
     grid-area: login;
-    justify-self: left;
+    justify-self: center;
+    align-self: end;
 }
 
 /* form grid */
@@ -44,3 +42,12 @@ section#signup input[type="text"], section#signup input[type="password"]{
 section#signup input[type="submit"] {
     grid-column: 2;
 }
+
+/* centering the image with the grid */
+
+/* body > header img {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    justify-self: center;
+} */
