@@ -12,7 +12,7 @@ CREATE TABLE User (
     Password CHAR(255) NOT NULL,
     Name STRING NOT NULL,
     Email STRING NOT NULL UNIQUE,
-    Profile_Pic STRING NOT NULL UNIQUE
+    Profile_Pic STRING NOT NULL UNIQUE DEFAULT "default.png"
 );
 
 -- TABLE: Quotes
