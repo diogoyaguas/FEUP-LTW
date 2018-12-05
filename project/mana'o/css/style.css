@@ -8,19 +8,46 @@
 body {
     background-color: #D35763;
     color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* header */
+
+body > header {
+    margin: 0;
+}
+
+body > header img {
+    margin-left: 30%;
 }
 
 body > header h1{
+    margin: 0;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 4em;
     color: #BAD1CD;
     text-align: center;
 }
 
-section#signup input {
-    color: #818181;
-    margin: 0.5em;
+body > header h3 {
+    margin: 0;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+/* signup */
+
+section#signup form input {
     width: 15em;
     height: 3em;
+}
 
+section#signup form input[type="submit"] {
+    width: auto;
+}
+
+section#signup input {
+    color: #818181;
 }
 
 section#signup input[type="text"] {
@@ -29,11 +56,14 @@ section#signup input[type="text"] {
 
 section#signup input[type="password"] {
     background-color: #BAD1CD;
+    margin-bottom: 1em;
 }
 
 section#signup input[type="submit"] {
     background-color: #BAD1CD;
 }
+
+/* login */
 
 nav#login a {
     text-decoration: none;
