@@ -52,7 +52,31 @@
       function usernameAlreadyExists($username){
         global $dbh;
         $stmt = $dbh->prepare('SELECT * FROM User WHERE Username = ?');
-        $stmt->execute([$username]);
+        $stmt->execute(array($username]));
         return $stmt->fetch();
+    }
+
+    function getUser($username) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT Name, Username, Email , Profile_Pic FROM User WHERE Username = ?');
+        $stmt->execute(array($username));
+        return $stmt->fetch();
+      
+      }catch(PDOException $e) {
+        return null;
+      }
+    }
+
+    function deleteUser($userID) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('DELETE FROM User WHERE ID = ?');
+        $stmt->execute(array($userID));
+        return true;
+      }
+      catch(PDOException $e) {
+        return false;
+      }
     }
 ?>

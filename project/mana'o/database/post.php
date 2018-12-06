@@ -1,13 +1,13 @@
 <?php
-    function createPost($User, $Title, $Text, $Date, $Score)
+    function createPost($user, $title, $text, $date)
     {
         global $dbh;
 		try {
 			$stmt = $dbh->prepare('INSERT INTO Post(User_ID, Title, Text, Date) VALUES (:User, :Title, :Text, :Date)');
-			$stmt->bindParam(':User', $User);
-            $stmt->bindParam(':Title', $Title);
-            $stmt->bindParam(':Text', $Text);
-            $stmt->bindParam(':Date', $Date);
+			$stmt->bindParam(':User', $user);
+            $stmt->bindParam(':Title', $title);
+            $stmt->bindParam(':Text', $text);
+            $stmt->bindParam(':Date', $date);
 			if($stmt->execute())
 		 		return $dbh->getPostID();
 			else
@@ -32,7 +32,7 @@
 		}
     }
     
-    function changeTitlePost($postD, $newTitle) {
+    function changeTitlePost($postID, $newTitle) {
 		global $dbh;
 		try {
 			$stmt = $dbh->prepare('UPDATE Post SET Title = :Title WHERE ID = :ID');
@@ -48,7 +48,7 @@
 		}
     }
     
-    function changeTextPost($postD, $newText) {
+    function changeTextPost($postID, $newText) {
 		global $dbh;
 		try {
 			$stmt = $dbh->prepare('UPDATE Post SET Text = :Text WHERE ID = :ID');
