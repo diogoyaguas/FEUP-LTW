@@ -1,6 +1,37 @@
 /* COLORS: 
-#D35763 - vermelho rosado
+#F5EBED - light 
 #BAD1CD - azul acinzentado
 #B5D2AA - verde
 #818181 - cinzento
 */
+:root {
+    --maincolor_bckgrnd: #F5EBED;
+    --color_separator: #996666;
+    --color_text: #000000;
+}
+
+body{
+    background-color: var(--maincolor-1);
+    color: var(--color_text);
+}
+body > header {
+    margin: 0;
+}
+
+body > header img {
+    margin-left: 0;
+}
+
+body > header h1{
+    margin: 0;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.9em;
+    color: var(--color_text);
+    text-align: left;
+}
+
+body > header h3 {
+    margin: 0;
+    font-size: 1.5em;
+    font-style: italic;
+}
