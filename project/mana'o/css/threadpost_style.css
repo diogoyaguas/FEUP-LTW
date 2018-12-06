@@ -11,7 +11,7 @@
 }
 
 body{
-    background-color: var(--maincolor-1);
+    background-color: var(--maincolor_bckgrnd);
     color: var(--color_text);
 }
 body > header {
