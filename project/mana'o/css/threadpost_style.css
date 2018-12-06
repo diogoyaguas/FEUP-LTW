@@ -14,6 +14,18 @@ body{
     background-color: var(--maincolor_bckgrnd);
     color: var(--color_text);
 }
+.homeButton{
+
+    background:url(../images/icon.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:100px;
+    height:100px;
+}
+.homeButton:active {
+     background:url(../images/icon_big.png) no-repeat;
+}
+
 body > header {
     margin: 0;
 }
@@ -30,8 +42,30 @@ body > header h1{
     text-align: left;
 }
 
-body > header h3 {
+<img src="../images/icon.png" alt="Site's icon">
+
+/* navigation */
+#menu ul {
     margin: 0;
-    font-size: 1.5em;
-    font-style: italic;
-}
+    padding: 0;
+  }
+  
+#menu li {
+    text-align: center;
+    list-style-type: none;
+
+    padding: 1em 0;
+  }
+  
+  #menu li a{
+    color: black;
+    text-decoration: none;
+  }
+  
+  #menu li:hover {
+    background-color: #2a2f33;
+  }
+  
+  #menu li:hover a{
+    color: white;
+  }
