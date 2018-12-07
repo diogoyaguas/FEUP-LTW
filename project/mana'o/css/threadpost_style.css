@@ -42,8 +42,6 @@ body > header h1{
     text-align: left;
 }
 
-<img src="../images/icon.png" alt="Site's icon">
-
 /* navigation */
 #menu ul {
     margin: 0;
@@ -58,7 +56,9 @@ body > header h1{
   }
   
   #menu li a{
-    color: black;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.9em;
+    color: var(--color_text);
     text-decoration: none;
   }
   
