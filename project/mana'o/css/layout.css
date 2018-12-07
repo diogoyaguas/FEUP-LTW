@@ -3,27 +3,29 @@
 body {
     margin: 5em;
     display: grid;
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "header signup"
-                         "login  login"; 
 }
 
 body > header {
     grid-area: header;
     justify-self: center;
+    align-self: center;
 }
 
 section#signup {
     grid-area: signup;
-    justify-self: start;
+    justify-self: center;
     align-self: center;
 }
 
 nav#login {
-    grid-area: login;
     justify-self: center;
-    align-self: end;
+}
+
+body > footer {
+    justify-self: center;   
 }
 
 /* form grid */
@@ -40,14 +42,6 @@ section#signup input[type="text"], section#signup input[type="password"]{
 }
 
 section#signup input[type="submit"] {
-    grid-column: 2;
-}
-
-/* centering the image with the grid */
-
-/* body > header img {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
+    grid-column: 1/span 2;
     justify-self: center;
-} */
+}

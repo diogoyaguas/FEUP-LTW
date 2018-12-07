@@ -1,0 +1,73 @@
+/* COLORS: 
+#F5EBED - light 
+#BAD1CD - azul acinzentado
+#B5D2AA - verde
+#818181 - cinzento
+*/
+:root {
+    --maincolor_bckgrnd: #F5EBED;
+    --color_separator: #996666;
+    --color_text: #000000;
+}
+
+body{
+    background-color: var(--maincolor_bckgrnd);
+    color: var(--color_text);
+}
+
+.homeButton{
+
+    background:url(../images/icon.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:100px;
+    height:100px;
+}
+
+.homeButton:active {
+     background:url(../images/icon_big.png) no-repeat;
+}
+
+body > header {
+    margin: 0;
+}
+
+body > header img {
+    margin-left: 0;
+}
+
+body > header h1{
+    margin: 0;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.9em;
+    color: var(--color_text);
+    text-align: left;
+}
+
+/* navigation */
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+  
+#menu li {
+    text-align: center;
+    list-style-type: none;
+
+    padding: 1em 0;
+}
+  
+#menu li a{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.9em;
+    color: var(--color_text);
+    text-decoration: none;
+}
+  
+#menu li:hover {
+background-color: #2a2f33;
+}
+  
+#menu li:hover a{
+color: white;
+}
