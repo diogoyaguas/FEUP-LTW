@@ -14,7 +14,7 @@
         }
     }
 
-    function createUser($username, $password, $name, $email, $profilePhoto) {
+    function createUser($username, $password, $name, $email, $bio, $profilePhoto) {
       $passwordhashed = hash('sha256', $password);
       global $dbh;
       try {
@@ -49,18 +49,23 @@
         }
       }
 
-      function usernameAlreadyExists($username){
-        global $dbh;
-        $stmt = $dbh->prepare('SELECT * FROM User WHERE Username = ?');
-        $stmt->execute(array($username]));
-        return $stmt->fetch();
-    }
-
     function getUser($username) {
       global $dbh;
       try {
         $stmt = $dbh->prepare('SELECT Name, Username, Email , Profile_Pic FROM User WHERE Username = ?');
         $stmt->execute(array($username));
+        return $stmt->fetch();
+      
+      }catch(PDOException $e) {
+        return null;
+      }
+    }
+
+    function getUserPhoto($userID) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT Photo FROM User WHERE ID = ?');
+        $stmt->execute(array($userID));
         return $stmt->fetch();
       
       }catch(PDOException $e) {
@@ -77,6 +82,56 @@
       }
       catch(PDOException $e) {
         return false;
+      }
+    }
+
+    function updateUserInfo($userID, $name, $username, $email, $bio){
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('UPDATE User SET Name = ?, Username = ?, Email = ? , Bio = ? WHERE ID = ?');
+        if($stmt->execute(array($name, $username, $email, $bio, $userID)))
+            return true;
+        else{
+          return false;
+        }   
+      }catch(PDOException $e) {
+        return false;
+      }
+    }
+
+    function updateUserPhoto($userID, $photoPath) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('UPDATE User SET Photo = ? WHERE ID = ?');
+        if($stmt->execute(array($photoPath, $userID)))
+            return true;
+        else
+            return false;
+      }catch(PDOException $e) {
+        return false;
+      }
+    }
+
+    function usernameAlreadyExists($username) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT ID FROM User WHERE username = ?');
+        $stmt->execute(array($username));
+        return $stmt->fetch()  !== false;
+      
+      }catch(PDOException $e) {
+        return true;
+      }
+    }
+    function emailAlreadyExists($email) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT ID FROM User WHERE email = ?');
+        $stmt->execute(array($email));
+        return $stmt->fetch()  !== false;
+      
+      }catch(PDOException $e) {
+        return true;
       }
     }
 ?>

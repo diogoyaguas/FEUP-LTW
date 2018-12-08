@@ -5,6 +5,7 @@
 #818181 - cinzento
 */
 
+
 body {
     background-color: #D35763;
     color: white;
@@ -33,21 +34,20 @@ body > header h3 {
     margin: 0;
     font-size: 1.5em;
     font-style: italic;
+    text-align: center;
 }
 
 /* signup */
-
-section#signup form input {
-    width: 15em;
-    height: 3em;
-}
 
 section#signup form input[type="submit"] {
     width: auto;
 }
 
-section#signup input {
+section#signup form input {
     color: #818181;
+    font-size: 1.2em;
+    width: 15em;
+    height: 3em;
 }
 
 section#signup input[type="text"] {
@@ -65,9 +65,23 @@ section#signup input[type="submit"] {
 
 /* login */
 
+nav#login {
+    position: absolute;
+    bottom: 4em;
+}
+
 nav#login a {
     text-decoration: none;
     color: #818181;
     background-color: #BAD1CD;
     padding: 0.5em;
+}
+
+/* footer */
+
+body > footer {
+    text-align: center;
+    height: 2em;
+    position: absolute;
+    bottom: 2em;
 }

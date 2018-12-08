@@ -43,6 +43,7 @@ body > header h3{
     height:100px;
     margin-top:1em;
 }
+
 .homeButton:active {
      background:url(../images/icon_big.png) no-repeat;
 }
@@ -52,7 +53,7 @@ body > header h3{
 #menu ul {
     margin: 0;
     padding: 0;
-  }
+}
   
 #menu li {
     text-align: center;
