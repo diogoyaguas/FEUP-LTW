@@ -12,5 +12,5 @@
   }
 
   if((getUsername() === null || getUserID() === null) && basename($_SERVER['PHP_SELF']) != 'signup.php')
-    header('Location:../pages/login.php');
+    header('Location:../templates/login.php');
 ?>

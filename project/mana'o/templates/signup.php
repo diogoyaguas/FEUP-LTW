@@ -35,8 +35,10 @@
     <nav id="login">
         <p>Already have an account? <a href="login.php">Login</a> </p>
     </nav>
+    
     <footer>
         <p>Copyright FEUP | Developed by Diogo Yaguas, Gonçalo Bernardo and Joana Ramos | From three minds to one another</p>
     </footer>
 
+    <p> <?php echo htmlentities($error) ?> </p>
 </body>
