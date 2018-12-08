@@ -8,7 +8,7 @@ include_once('../database/user.php');
 		header("Location:".$_SERVER['HTTP_REFERER'].""); // redirect the page to the page it came from.
 	}
 	else if(emailAlreadyExists($_POST['email'])){
-		$_SESSION['ERROR'] = 'There''s already a Manao account associated with this email address';
+		$_SESSION['ERROR'] = 'Exists a Manao account associated with this email address';
 		header("Location:".$_SERVER['HTTP_REFERER'].""); // redirect the page to the page it came from.
 	}
  	else if (($userID = createUser($_POST['username'], $_POST['password'], $_POST['name'], $_POST['email'])) != -1) {
