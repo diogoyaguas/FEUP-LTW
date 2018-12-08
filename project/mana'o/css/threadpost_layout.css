@@ -26,3 +26,26 @@ body > header {
 #menu ul li{
     flex: auto;
 }
+
+/* ABOUT */
+section #about{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr 1fr;
+    
+    grid-template-areas: "img name"
+                         "description description"
+                         "sincerely sincerely"
+                         "team team"
+}
+section #about {
+    grid-area: header;
+    justify-self: center;
+    align-self: center;
+}
+
+section #about {
+    grid-area: signup;
+    justify-self: center;
+    align-self: center;
+}

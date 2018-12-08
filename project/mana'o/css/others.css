@@ -1,0 +1,146 @@
+:root {
+    --maincolor_bckgrnd: #F5EBED;
+    --color_smallhover: #2a2f33;
+    --color_separator: #5f3939;
+}
+
+.about{
+    margin: 0;
+    color: var(--color_smallhover);
+}
+
+
+
+.about img {
+    margin:0;
+    display: block;
+    margin: auto auto;
+}
+.about h1{
+    margin-top: 12px;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2em;
+    text-align: center;
+}
+.about h2{
+    margin-top: 2em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 3em;
+    text-align: center;
+}
+.about p{
+    margin: 0 3em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: justify;
+}
+.about p + p + p{
+    margin-top: 2em;
+    font-weight: bold;
+}
+
+.about h3{
+    margin: 1em 7em;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 2em;
+    text-align: center;
+}
+.about h4{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 1em;
+}
+
+
+.about input[type="submit"] {
+    background-color: rgb(255, 133, 124);
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+
+    display: inline-block;
+    padding: 14px 20px;
+    margin-top: 4em;
+    margin-left: 16px;
+    border: none;
+    border-radius: 5px;
+}
+.about input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--color_separator);
+    
+}
+
+
+/* CONTACTS */
+.contacts{
+    margin: 0;
+    color: var(--color_smallhover);
+}
+
+.contacts img {
+    margin:0;
+    display: block;
+    margin: auto auto;
+}
+.contacts h1{
+    margin-top: 12px;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2em;
+    text-align: center;
+}
+.contacts h2{
+    margin-top: 2em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 3em;
+    text-align: center;
+}
+.contacts p{
+    margin: 0 3em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: justify;
+}
+.contacts > div{
+    margin: 1em 5em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+}
+
+.contacts h3{
+    margin: 1em 7em;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 2em;
+    text-align: center;
+}
+.contacts h4{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 1em;
+}
+
+
+.contacts input[type="submit"] {
+    background-color: rgb(255, 133, 124);
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+
+    display: inline-block;
+    padding: 14px 20px;
+    margin-top: 4em;
+    margin-left: 16px;
+    border: none;
+    border-radius: 5px;
+}contacts
+.about input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--color_separator);
+    
+}
