@@ -1,0 +1,89 @@
+:root {
+    --maincolor_bckgrnd: #F5EBED;
+    --color_separator: #5f3939;
+    --color_text: #000000;
+    --color_manao: #D35763;
+    --color_manao2: #DF7175;
+    --color_smallhover: #2a2f33;
+}
+
+/*POST ADD*/
+.add_post {
+    background-color: var(--color_manao2);
+
+    box-shadow: none;
+    text-align: left;
+
+    width: 70%;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    padding: 2%;
+    border-radius: 3px 3px;
+}
+
+
+.add_post input[type="text"] {
+    background-color: var(--maincolor_bckgrnd);
+    color: black;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 20px;
+    text-align: justify;
+
+    width: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 3px 3px;
+    border: 2px solid white;
+}
+
+.add_post textarea {
+    background-color: var(--maincolor_bckgrnd);
+    color: black;
+    font-family: 'Roboto', sans-serif;
+
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 3em;
+    width: 96%;
+
+    border-radius: 3px 3px;
+    border: 2px solid white;
+    resize: none;
+}
+
+.add_post input[type="submit"] {
+    background-color: rgb(255, 133, 124);
+    color: white;
+    font-weight: bold;
+
+    padding: 14px 20px;
+    margin-top: 3em;
+    margin-left: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.add_post input[type="submitincate"] {
+    background-color: var(--maincolor_bckgrnd);
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    text-align: justify;
+
+    padding: 10px;
+    margin: 10px;
+    margin-top: 1em;
+    width: 10%;
+
+    border-radius: 3px 3px;
+    border: 2px solid white;
+}
+
+.add_post input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--color_separator);
+    
+}

@@ -1,0 +1,29 @@
+body {
+    margin: 0em;
+}
+
+body > header {
+    display: flex;
+    
+    flex: auto;
+    align-content: space-around;
+    justify-content: space-between;
+    width: auto;
+}
+
+
+#menu ul {
+    margin:0;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: flex-end;
+
+    background-color: white;
+}
+
+#menu ul li{
+    flex: auto;
+}

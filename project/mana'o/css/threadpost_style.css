@@ -8,41 +8,45 @@
     --maincolor_bckgrnd: #F5EBED;
     --color_separator: #996666;
     --color_text: #000000;
+    --color_manao: #D35763;
+    --color_smallhover: #2a2f33;
 }
 
 body{
+    margin: 0;
     background-color: var(--maincolor_bckgrnd);
     color: var(--color_text);
 }
+
+body > header {
+    margin: 0
+}
+
+body > header h3{
+    margin-top: 4em;
+
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.9em;
+    text-align: left;
+
+    color: var(--color_text);
+}
+
+
 .homeButton{
 
     background:url(../images/icon.png) no-repeat;
     cursor:pointer;
     border:none;
+
     width:100px;
     height:100px;
+    margin-top:1em;
 }
 .homeButton:active {
      background:url(../images/icon_big.png) no-repeat;
 }
 
-body > header {
-    margin: 0;
-}
-
-body > header img {
-    margin-left: 0;
-}
-
-body > header h1{
-    margin: 0;
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: 0.9em;
-    color: var(--color_text);
-    text-align: left;
-}
-
-<img src="../images/icon.png" alt="Site's icon">
 
 /* navigation */
 #menu ul {
@@ -53,19 +57,27 @@ body > header h1{
 #menu li {
     text-align: center;
     list-style-type: none;
-
-    padding: 1em 0;
   }
   
   #menu li a{
-    color: black;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.9em;
+    color: var(--color_text);
+
     text-decoration: none;
+    text-align: center;
   }
   
   #menu li:hover {
-    background-color: #2a2f33;
+    background-color: var(--color_separator);
   }
   
   #menu li:hover a{
     color: white;
   }
+
+  nav > ul > li{
+    border-left: 2px solid var(--color_manao);
+    padding: 2em;
+    margin-left: 0;
+}
