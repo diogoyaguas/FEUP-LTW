@@ -18,7 +18,12 @@
     <header>
         <img src="../images/icon_big.png" alt="Site's icon">
         <h1>m a n a ' o</h1>
-        <h3>"how can you be a hero today?"</h3>
+        <h3> 
+            <?php
+                include_once("../database/quotes.php");
+                echo getRandomQuote();
+            ?>
+        </h3>
     </header>
 
     <section id="signup">
