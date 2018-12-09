@@ -1,11 +1,13 @@
 /* general layout (grid) */ 
 
 body {
-    margin: 5em;
+    margin: 8em;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "header signup"
+                         "form form"
+                         "footer footer";
 }
 
 body > header {
@@ -21,10 +23,12 @@ section#signup {
 }
 
 nav#login {
+    grid-area: form;
     justify-self: center;
 }
 
 body > footer {
+    grid-area: footer;
     justify-self: center;   
 }
 
@@ -34,6 +38,7 @@ section#signup form {
     display: grid;
     grid-template-rows: auto auto auto auto;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
 }
 
 section#signup input[type="text"], section#signup input[type="password"]{

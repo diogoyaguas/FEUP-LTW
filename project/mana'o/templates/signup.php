@@ -17,7 +17,7 @@
 <body>
     <header>
         <img src="../images/icon_big.png" alt="Site's icon">
-        <h1>M a n a ' o</h1>
+        <h1>m a n a ' o</h1>
         <h3>"how can you be a hero today?"</h3>
     </header>
 

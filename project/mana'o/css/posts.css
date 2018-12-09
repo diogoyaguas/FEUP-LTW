@@ -105,6 +105,5 @@
 }
 .add_post input[type="retreat"]:hover {
     cursor: pointer;
-    background-color: var(--color_separator);
-    
+    background-color: var(--color_separator);   
 }

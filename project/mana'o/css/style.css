@@ -15,7 +15,7 @@ body {
 /* header */
 
 body > header {
-    margin: 0;
+    margin: 10%;
 }
 
 body > header img {
@@ -32,7 +32,7 @@ body > header h1{
 
 body > header h3 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-style: italic;
     text-align: center;
 }
@@ -44,27 +44,39 @@ section#signup form input[type="submit"] {
 }
 
 section#signup form input {
-    color: #818181;
+    color: #4e4e4e;
     font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
     width: 15em;
     height: 3em;
 }
 
 section#signup input[type="text"] {
-    background-color: #B5D2AA;
+    background-color: #F5EBED;
+    border-radius: 3px 3px;
+    border: 2px solid white;  
 }
 
 section#signup input[type="password"] {
-    background-color: #BAD1CD;
+    background-color: rgb(255, 189, 202);
     margin-bottom: 1em;
+    border-radius: 3px 3px;
+    border: 2px solid white;
 }
 
 section#signup input[type="submit"] {
     background-color: #BAD1CD;
+    border: none;
+    margin-top: 1%;
+    height: 2em;
+}
+section#signup input[type="submit"]:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #5f3939;   
 }
 
 /* login */
-
 nav#login {
     position: absolute;
     bottom: 4em;
@@ -76,9 +88,13 @@ nav#login a {
     background-color: #BAD1CD;
     padding: 0.5em;
 }
+nav#login a:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #5f3939;   
+}
 
 /* footer */
-
 body > footer {
     text-align: center;
     height: 2em;
