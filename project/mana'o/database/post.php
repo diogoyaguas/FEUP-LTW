@@ -64,4 +64,32 @@
 		}
 	}
 
+	function getAllPosts() {
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post ORDER BY DESC DATE');
+			if($stmt->execute())
+				return $stmt->fetch();;
+			else
+				return -1;
+		
+		} catch(PDOException $e) {
+			return false;
+		}
+	}
+
+	function getFiveMostRecentPosts() {
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post ORDER BY DESC Date LIMIT 5');
+			if($stmt->execute())
+				return $stmt->fetch();;
+			else
+				return -1;
+		
+		} catch(PDOException $e) {
+			return false;
+		}
+	}
+
 ?>

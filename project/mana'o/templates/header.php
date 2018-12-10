@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <title>MANA'O Thread Posting</title>
-    <link href="../css/main_layout.css" rel="stylesheet">
-    <link href="../css/main_style.css" rel="stylesheet">
+    <link href="../css/main_layout.css" rel="stylesheet"> 
+    <link href="../css/main_style.css" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
 </head>
@@ -36,6 +36,6 @@
                 </div>
             </div>
 
-            <script src="../js/dropdown.js"></script>
+            <script src="../scripts/dropdown.js"></script>
         </nav>
     </header>

@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <title>MANA'O</title>
-    <link href="../css/forms_style.css" rel="stylesheet">
+    <link href="../css/forms_style.css" rel="stylesheet"> 
     <link href="../css/forms_layout.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
