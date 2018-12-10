@@ -22,5 +22,20 @@
                 <li><a href="about.php">About</a></li>
                 <li><a href="contacts.php">Contacts</a></li>
             </ul>
+            <div class="dropdown">
+                <img id="profile" src="../profilePictures/<?php
+                    include_once('../includes/init.php');
+                    include_once("../database/user.php");
+                    echo getUserPhoto($_SESSION['userID']);
+                ?>" alt="Profile picture" onclick="myFunction()" class="dropbtn">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">My Mana'o</a>
+                    <a href="#">My Friends</a>
+                    <a href="#">Channels</a>
+                    <a href="../actions/logoutAction.php">Log out</a>
+                </div>
+            </div>
+
+            <script src="../js/dropdown.js"></script>
         </nav>
     </header>
