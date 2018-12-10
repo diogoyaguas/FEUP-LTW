@@ -17,19 +17,19 @@
 
     <body>
         <section class="home">
-            <img src="../images/icon_big.png" alt="Site's icon">
+            <img id="logo" src="../images/icon_big.png" alt="Site's icon">
             <h1>M a n a ' o</h1>
+            <img id="profile" src="../profilePictures/<?php
+                include_once('../includes/init.php');
+                include_once("../database/user.php");
+                echo getUserPhoto($_SESSION['userID']);
+            ?>" alt="Profile picture">
             <form action="../actions/logoutAction.php" method="post">
                 <div>
                     <input type="submit" value="Sign Out">
                 </div>
             </form>
-            <img src="<?php
-                include_once('../includes/init.php');
-                include_once("../database/user.php");
-                getUserPhoto($_SESSION['userID']);
-            ?>" alt="Profile picture">
         </section>
     </body>
 
-    </html>
+    </html> 

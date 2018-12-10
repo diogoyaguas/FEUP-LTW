@@ -144,8 +144,9 @@
     margin: 0;
     color: var(--color_smallhover);
 }
-.home img {
-    margin: 5em;
+.home #logo {
+    float: left;
+    margin-left: 5em;
     margin-top: 7em;
 }
 .home h1{
@@ -171,4 +172,14 @@
 .home input[type="submit"]:hover {
     cursor: pointer;
     background-color: var(--color_separator);
+}
+
+.home #profile {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border:7px solid white;
+    border-radius: 50%;
+    top: 25em;
+    right: 10em;
 }

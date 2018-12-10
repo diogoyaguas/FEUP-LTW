@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <input class="homeButton" type="submit_home" value="">
+        <input class="homeButton" type="submit_home" value="" onclick="window.location='home.php';">
         <h3>M A N A ' O</h3>
         <nav id="menu">
             <ul>

@@ -42,11 +42,7 @@ body > header h3{
     width:100px;
     height:100px;
     margin-top:1em;
-}
-
-.homeButton:active {
-     background:url(../images/icon_big.png) no-repeat;
-}
+}   
 
 
 /* navigation */

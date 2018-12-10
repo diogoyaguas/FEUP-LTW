@@ -61,9 +61,12 @@
     function getUserPhoto($userID) {
       global $dbh;
       try {
-        $stmt = $dbh->prepare('SELECT Photo FROM User WHERE ID = ?');
-        $stmt->execute(array($userID));
-        return $stmt->fetch();
+        $stmt = $dbh->prepare('SELECT Profile_Pic FROM User WHERE ID = ?');
+        
+        if($stmt->execute(array($userID))) {
+          $row = $stmt->fetch();
+          return $row['Profile_Pic'];
+        }
       
       }catch(PDOException $e) {
         return null;
