@@ -35,7 +35,7 @@
                 Gonçalo Bernardo,
                 Joana Ramos
         </h4>
-        <form action="home.php" method="post">
+        <form action="javascript:history.go(-1)" method="post">
             <div><input type="submit" value="BACK"></div>
         </form>
     </section>

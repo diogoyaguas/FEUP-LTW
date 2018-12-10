@@ -9,10 +9,11 @@
    }
 
    function getUsername() {
-    if(isset($_SESSION['username'])) {
-         return $_SESSION['username'];
-    } else {
-        return null;
+        if(isset($_SESSION['username'])) {
+            return $_SESSION['username'];
+        } else {
+            return null;
+        }
     }
 
    function getUserID() {
@@ -22,6 +23,5 @@
            return null;
        }
    }
-}
 
 ?>

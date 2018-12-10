@@ -2,8 +2,7 @@
     include_once('../includes/init.php');
 
     if(getUserID() !== null  && getUsername() !== null) {
-        unset($_SESSION['username']);
-        unset($_SESSION['userID']);
+        $_SESSION = array();
         header('Location:../index.php');   
     } else {
         $_SESSION['ERROR'] = "Error logging out!";

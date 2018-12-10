@@ -1,21 +1,19 @@
 <?php
     function correctLogin ($username, $password) {
-        $passwordhashed = hash('sha256', $password);
-        global $dbh;
-        try {
-          $stmt = $dbh->prepare('SELECT * FROM User WHERE Username = ? AND Password = ?');
-          $stmt->execute(array($username, $passwordhashed));
-          if($stmt->fetch() !== false) {
-            return getUserID($username);
-          }
-          else return -1;
-        } catch(PDOException $e) {
-          return -1;
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT * FROM user WHERE Username = ? AND Password = ?');
+        $stmt->execute(array($username, $password));
+        if($stmt->fetch() !== false) {
+          return getID($username);
         }
+        else return -1;
+      } catch(PDOException $e) {
+        return -1;
+      }
     }
 
     function createUser($username, $password, $name, $email, $bio, $profilePhoto) {
-      $passwordhashed = hash('sha256', $password);
       global $dbh;
       try {
         $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email) VALUES (:Username,:Password,:Name,:Email)');
@@ -24,18 +22,17 @@
         $stmt->bindParam(':Name', $name);
         $stmt->bindParam(':Email', $email);
         if($stmt->execute()){
-          $id = getUserID($username);
+          $id = getID($username);
           return $id;
         }
         else
           return -1;
       }catch(PDOException $e) {
-        
         return -1;
       }
     }
 
-      function getUserID($username) {
+      function getID($username) {
         global $dbh;
         try {
           $stmt = $dbh->prepare('SELECT ID FROM User WHERE Username = ?');

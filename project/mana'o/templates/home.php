@@ -16,25 +16,19 @@
     </head>
 
     <body>
-        <section class="contacts">
+        <section class="home">
             <img src="../images/icon_big.png" alt="Site's icon">
             <h1>M a n a ' o</h1>
-            <h2>CONTACTS</h2>
-            <p> Looking to contact the team for any issues, doubts or questions? Let us know here:
-            </p>
-            <div>up20160165@fe.up.pt | Diogo Yaguas</div>
-            <div>up201606058@fe.up.pt | Gonçalo Bernardo</div>
-            <div>up201605017@fe.up.pt | Joana Ramos</div>
-            <h3>Sincerely, the Team:</h3>
-            <h4>    Diogo Yaguas,
-                    Gonçalo Bernardo,
-                    Joana Ramos</h4>
-
-            <form action="javascript:history.go(-1)" method="post">
+            <form action="../actions/logoutAction.php" method="post">
                 <div>
-                    <input type="submit" value="BACK">
+                    <input type="submit" value="Sign Out">
                 </div>
             </form>
+            <img src="<?php
+                include_once('../includes/init.php');
+                include_once("../database/user.php");
+                getUserPhoto($_SESSION['userID']);
+            ?>" alt="Profile picture">
         </section>
     </body>
 

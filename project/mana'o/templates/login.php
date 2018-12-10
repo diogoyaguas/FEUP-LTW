@@ -1,5 +1,5 @@
 <?php
-    include_once("../includes/init.php");
+    include_once("../includes/session.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +20,7 @@
         <h1>m a n a ' o</h1>
         <h3> 
             <?php
+                include_once(__DIR__.'/../database/config.php');
                 include_once("../database/quotes.php");
                 echo getRandomQuote();
             ?>
@@ -28,21 +29,21 @@
 
     <section id="signup">
 
-        <form action="../actions/signupAction.php" method="post">
-            <input type="text" name="name" placeholder="Name">
-            <input type="text" name="username" placeholder="Username">
-            <input type="text" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
-            <input type="submit" value="Sign up">
+        <form action="../actions/loginAction.php" method="post">
+            <input type="text" name="username" placeholder="Username" required="required">
+            <input type="password" name="password" placeholder="Password" required="required">
+            <input type="submit" value="Login In">
         </form>
 
     </section>
 
     <nav id="login">
-        <p>Already have an account? <a href="login.php">Login</a> </p>
+        <p>Don't have a Mana'o Account? <a href="signup.php">Signup</a> </p>
     </nav>
 
-    <p> <?php echo htmlentities($error) ?> </p>
+    <p id="error_messages" style="color: black">
+        <?php if(isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR'])?>
+    </p>
 
     <?php
     include_once("footer.php");

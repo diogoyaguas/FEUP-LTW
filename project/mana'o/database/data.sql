@@ -1,4 +1,4 @@
-INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('diogoyaguas', 'yaguas98', 'Diogo Yaguas', 'diogo.yaguas@hotmail.com', '1.png');
+INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('diogoyaguas', 'yaguas98', 'Diogo Yaguas', 'diogo.yaguas@hotmail.com', '1.jpg');
 INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('joanasmramos', 'joaninha1998', 'Joana Ramos', 'joanasmramos98@gmail.com', '2.png');
 INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('mrpinemyapple', 'ananasevida1998', 'Gonçalo Nuno Bernardo', 'mrpinemyapple@gmail.com', '3.png');
 INSERT INTO User (Username, Password, Name, Email, Profile_Pic) VALUES ('mafaldafalcaotvf', 'professora2012', 'Mafalda Falcão', 'mafaldafferreira@fe.up.pt', '4.png');

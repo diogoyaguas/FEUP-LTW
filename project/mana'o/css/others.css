@@ -8,9 +8,6 @@
     margin: 0;
     color: var(--color_smallhover);
 }
-
-
-
 .about img {
     margin:0;
     display: block;
@@ -53,8 +50,6 @@
     text-align: center;
     font-size: 1em;
 }
-
-
 .about input[type="submit"] {
     background-color: rgb(255, 133, 124);
     color: white;
@@ -124,8 +119,6 @@
     text-align: center;
     font-size: 1em;
 }
-
-
 .contacts input[type="submit"] {
     background-color: rgb(255, 133, 124);
     color: white;
@@ -138,9 +131,44 @@
     margin-left: 16px;
     border: none;
     border-radius: 5px;
-}contacts
-.about input[type="submit"]:hover {
+}
+.contacts input[type="submit"]:hover {
     cursor: pointer;
     background-color: var(--color_separator);
     
+}
+
+/* HOME */
+
+.home{
+    margin: 0;
+    color: var(--color_smallhover);
+}
+.home img {
+    margin: 5em;
+    margin-top: 7em;
+}
+.home h1{
+    position: absolute;
+    top: 7em;
+    left: 6.5em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 3em;
+}
+.home input[type="submit"] {
+    background-color: rgb(255, 133, 124);
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+
+    display: inline-block;
+    padding: 14px 20px;
+    margin-top: 4em;
+    margin-left: 16px;
+    border: none;
+    border-radius: 5px;
+}
+.home input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--color_separator);
 }
