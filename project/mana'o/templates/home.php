@@ -24,11 +24,6 @@
                 include_once("../database/user.php");
                 echo getUserPhoto($_SESSION['userID']);
             ?>" alt="Profile picture">
-            <form action="../actions/logoutAction.php" method="post">
-                <div>
-                    <input type="submit" value="Sign Out">
-                </div>
-            </form>
         </section>
     </body>
 
