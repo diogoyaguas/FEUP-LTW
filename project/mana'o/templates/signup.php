@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <img src="../images/icon_big.png" alt="Site's icon">
+        <img src="../images/dynamic_icon.gif" alt="Dynamic">
         <h1>m a n a ' o</h1>
         <h3> 
             <?php
