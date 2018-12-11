@@ -16,7 +16,7 @@
 <body>
      <section class = "about">
         <img src="../images/dynamic_icon.gif" alt="Dynamic">
-        <h1>M a n a ' o</h1>
+        <h1>m a n a' o</h1>
         <h2>ABOUT US</h2>
         <p>      As it is written by the language of Native Hawaiians, M A N A ' O follows its exact concept of mindfulness, positivity, power of opinion, help, friendship.
         </p>

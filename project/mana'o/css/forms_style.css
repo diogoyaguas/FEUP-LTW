@@ -10,6 +10,7 @@ body {
     background-color: #D35763;
     color: white;
     font-family: 'Roboto', sans-serif;
+    
 }
 
 /* header */
@@ -26,15 +27,17 @@ body > header h1{
     margin: 0;
     font-family: 'Julius Sans One', sans-serif;
     font-size: 4em;
-    color: #BAD1CD;
+    color: white(255, 255, 255);
     text-align: center;
 }
 
 body > header h3 {
     margin: 0;
-    font-size: 1.3em;
+    width: 100%;
+    font-size: 1.1em;
     font-style: italic;
     text-align: center;
+    color: #ece7c5;
 }
 
 /* signup */
@@ -94,10 +97,16 @@ nav#login a:hover {
     background-color: #5f3939;   
 }
 
+/* errors in login/signup */
+body > p {
+    font-size: 1.3em;
+    color: rgb(164, 0, 0);
+    text-align: right;
+    font-weight: bold;
+}
+
 /* footer */
-body > footer {
+body > footer{
     text-align: center;
     height: 2em;
-    position: absolute;
-    bottom: 2em;
 }

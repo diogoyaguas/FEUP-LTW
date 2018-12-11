@@ -18,7 +18,7 @@
     <body>
         <section class="contacts">
             <img src="../images/dynamic_icon.gif" alt="Dynamic">
-            <h1>M a n a ' o</h1>
+            <h1>m a n a' o</h1>
             <h2>CONTACTS</h2>
             <p> Looking to contact the team for any issues, doubts or questions? Let us know here:
             </p>

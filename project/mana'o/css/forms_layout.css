@@ -1,7 +1,8 @@
 /* general layout (grid) */ 
 
 body {
-    margin: 8em;
+    margin: 6em;
+    margin-bottom: 0;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
@@ -20,16 +21,30 @@ section#signup {
     grid-area: signup;
     justify-self: center;
     align-self: center;
+    
 }
 
 nav#login {
     grid-area: form;
-    justify-self: center;
+    justify-self: left;
+
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 1rem;
+    align-self: flex-end;
 }
 
 body > footer {
     grid-area: footer;
-    justify-self: center;   
+    justify-self: left; 
+
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 1rem;
+    align-self: flex-end; 
+}
+body > p {
+    display: block;
 }
 
 /* form grid */

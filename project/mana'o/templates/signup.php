@@ -17,7 +17,7 @@
 <body>
     <header>
         <img src="../images/dynamic_icon.gif" alt="Dynamic">
-        <h1>m a n a ' o</h1>
+        <h1>m a n a' o</h1>
         <h3> 
             <?php
                 include_once("../database/quotes.php");

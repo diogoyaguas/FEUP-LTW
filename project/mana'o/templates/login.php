@@ -16,8 +16,8 @@
 
 <body>
     <header>
-        <img src="../images/icon_big.png" alt="Site's icon">
-        <h1>m a n a ' o</h1>
+        <img src="../images/dynamic_icon.gif" alt="Dynamic">
+        <h1>m a n a' o</h1>
         <h3> 
             <?php
                 include_once(__DIR__.'/../database/config.php');
@@ -32,7 +32,7 @@
         <form action="../actions/loginAction.php" method="post">
             <input type="text" name="username" placeholder="Username" required="required">
             <input type="password" name="password" placeholder="Password" required="required">
-            <input type="submit" value="Login In">
+            <input type="submit" value="Login">
         </form>
 
     </section>
@@ -41,7 +41,7 @@
         <p>Don't have a Mana'o Account? <a href="signup.php">Signup</a> </p>
     </nav>
 
-    <p id="error_messages" style="color: black">
+    <p id="error_messages">
         <?php if(isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR'])?>
     </p>
 
