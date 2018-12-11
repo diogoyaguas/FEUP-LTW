@@ -1,9 +1,10 @@
 <?php
     function correctLogin ($username, $password) {
       global $dbh;
+      $passwordhashed = hash('sha256', $password);
       try {
         $stmt = $dbh->prepare('SELECT * FROM user WHERE Username = ? AND Password = ?');
-        $stmt->execute(array($username, $password));
+        $stmt->execute(array($username, $passwordhashed));
         if($stmt->fetch() !== false) {
           return getID($username);
         }
@@ -15,18 +16,18 @@
 
     function createUser($username, $password, $name, $email) {
       global $dbh;
+      $passwordhashed = hash('sha256', $password);
       try {
         $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email) VALUES (:Username,:Password,:Name,:Email)');
         $stmt->bindParam(':Username', $username);
-        $stmt->bindParam(':Password', $password);
+        $stmt->bindParam(':Password', $passwordhashed);
         $stmt->bindParam(':Name', $name);
         $stmt->bindParam(':Email', $email);
         if($stmt->execute()){
           $id = getID($username);
           return $id;
         }
-        else
-          return -1;
+        else return -1;
       }catch(PDOException $e) {
         return -1;
       }
@@ -141,6 +142,21 @@
       }
     }
 
+    function updateUserPassword($userID, $newpassword){
+    $passwordhashed = hash('sha256', $newpassword);
+    global $dbh;
+    try {
+      $stmt = $dbh->prepare('UPDATE User SET Password = ? WHERE ID = ?');
+      if($stmt->execute(array($passwordhashed, $userID)))
+          return true;
+      else{
+        return false;
+      }   
+    }catch(PDOException $e) {
+      return false;
+    }
+  }
+
     function updateUserPhoto($userID, $photoPath) {
       global $dbh;
       try {
@@ -165,6 +181,7 @@
         return true;
       }
     }
+    
     function emailAlreadyExists($email) {
       global $dbh;
       try {
