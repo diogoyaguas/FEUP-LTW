@@ -15,7 +15,9 @@ body > header {
     grid-area: header;
     justify-self: center;
     align-self: center;
+    width: 100%;
 }
+
 
 section#signup {
     grid-area: signup;
@@ -45,6 +47,7 @@ body > footer {
 }
 body > p {
     display: block;
+
 }
 
 /* form grid */
