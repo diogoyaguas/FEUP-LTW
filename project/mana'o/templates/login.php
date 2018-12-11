@@ -41,7 +41,7 @@
         <p>Don't have a Mana'o Account? <a href="signup.php">Signup</a> </p>
     </nav>
 
-    <p id="error_messages">
+    <p id="errors">
         <?php if(isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR'])?>
     </p>
 
