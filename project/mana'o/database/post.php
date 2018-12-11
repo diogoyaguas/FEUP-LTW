@@ -67,28 +67,28 @@
 	function getAllPosts() {
 		global $dbh;
 		try {
-			$stmt = $dbh->prepare('SELECT * from Post ORDER BY DESC DATE');
+			$stmt = $dbh->prepare('SELECT * from Post ORDER BY Date DESC');
 			if($stmt->execute())
-				return $stmt->fetch();;
+				return $stmt->fetchAll();
 			else
 				return -1;
 		
 		} catch(PDOException $e) {
-			return false;
+			return -1;
 		}
 	}
 
 	function getFiveMostRecentPosts() {
 		global $dbh;
 		try {
-			$stmt = $dbh->prepare('SELECT * from Post ORDER BY DESC Date LIMIT 5');
+			$stmt = $dbh->prepare('SELECT * from Post ORDER BY Date DESC LIMIT 5');
 			if($stmt->execute())
-				return $stmt->fetch();;
+				return $stmt->fetchAll();
 			else
 				return -1;
 		
 		} catch(PDOException $e) {
-			return false;
+			return -1;
 		}
 	}
 

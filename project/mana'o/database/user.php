@@ -46,6 +46,20 @@
         }
       }
 
+      function getUsernameFromID($userID) {
+        global $dbh;
+        try {
+          $stmt = $dbh->prepare('SELECT Username FROM User WHERE ID = ?');
+          $stmt->execute(array($userID));
+          if($row = $stmt->fetch()){
+            return $row['Username'];
+          }
+        
+        }catch(PDOException $e) {
+          return -1;
+        }
+      }
+
     function getUser($username) {
       global $dbh;
       try {

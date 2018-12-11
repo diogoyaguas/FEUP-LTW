@@ -24,13 +24,12 @@
                 include_once("../database/user.php");
                 echo getUserPhoto($_SESSION['userID']);
             ?>" alt="Profile picture">
-            <div id="posts from friends">
-                <div id="posts">
-                    <section> 
-                        
-                    </section>
-                </div>
-            </div>
+            <div id="friendsPosts" >
+                <?php 
+                    include_once('post.php');
+                    makePosts();
+                ?>
+            >/div>
         </section>
     </body>
 
