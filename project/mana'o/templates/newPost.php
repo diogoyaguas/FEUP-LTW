@@ -16,15 +16,16 @@ include_once("header.php");
     </head>
 
     <body>
-        <!--TODO:
-     -Como inserir categorias???-->
         <section class="add_post">
-            <form action="new_post.php" method="post">
+            <form id="post" action="../actions/newPost.php" autocomplete="off" onSubmit="return false" method="post">
                 <div>
                     <input type="text" placeholder="T I T L E   O F   P O S T" name="Title" required>
                 </div>
                 <div>
-                    <input type="submitincate" placeholder="Categories" name="Insert Categories" required>
+                    <input id="categories" type="submitincate" placeholder="Categories" name="Insert Categories">
+                    <button id="submit" onclick='addRecord()'  style="display: none;" >Button</button>
+                    <label id='values'></label>
+                    <script src="../scripts/addCategories.js"></script>
                 </div>
                 <div>
                     <textarea rows="9" cols="30" placeholder="Insert Text or Image(Optional)" name="Post"></textarea>
