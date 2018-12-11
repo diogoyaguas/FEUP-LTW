@@ -17,12 +17,14 @@
     function createUser($username, $password, $name, $email) {
       global $dbh;
       $passwordhashed = hash('sha256', $password);
+      $date = getDate()['year'] . '/' . getDate()['month'];
       try {
-        $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email) VALUES (:Username,:Password,:Name,:Email)');
+        $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email, ParticipationDate) VALUES (:Username,:Password,:Name,:Email,:ParticipationDate)');
         $stmt->bindParam(':Username', $username);
         $stmt->bindParam(':Password', $passwordhashed);
         $stmt->bindParam(':Name', $name);
         $stmt->bindParam(':Email', $email);
+        $stmt->bindParam(':ParticipationDate', $date);
         if($stmt->execute()){
           $id = getID($username);
           return $id;
