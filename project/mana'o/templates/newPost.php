@@ -7,7 +7,7 @@ include_once("header.php");
 
     <head>
         <meta charset="utf-8" />
-        <title>MANA'O Thread Posting</title>
+        <title>MANA'O New Post</title>
         <link href="../css/main_layout.css" rel="stylesheet"> 
         <link href="../css/main_style.css" rel="stylesheet"> 
         <link href="../css/posts.css" rel="stylesheet">

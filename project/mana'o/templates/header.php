@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>MANA'O Thread Posting</title>
+    <title>MANA'O Header</title>
     <link href="../css/main_layout.css" rel="stylesheet"> 
     <link href="../css/main_style.css" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
