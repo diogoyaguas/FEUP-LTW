@@ -13,12 +13,12 @@
       }
     }
 
-    function createUser($username, $password, $name, $email, $bio, $profilePhoto) {
+    function createUser($username, $password, $name, $email) {
       global $dbh;
       try {
         $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email) VALUES (:Username,:Password,:Name,:Email)');
         $stmt->bindParam(':Username', $username);
-        $stmt->bindParam(':Password', $passwordhashed);
+        $stmt->bindParam(':Password', $password);
         $stmt->bindParam(':Name', $name);
         $stmt->bindParam(':Email', $email);
         if($stmt->execute()){
@@ -46,7 +46,21 @@
         }
       }
 
-      function getUsernameFromID($userID) {
+      function getName($userID) {
+        global $dbh;
+        try {
+          $stmt = $dbh->prepare('SELECT Name FROM User WHERE ID = ?');
+          $stmt->execute(array($userID));
+          if($row = $stmt->fetch()){
+            return $row['Name'];
+          }
+        
+        }catch(PDOException $e) {
+          return -1;
+        }
+      }
+
+      function getUsernameByID($userID) {
         global $dbh;
         try {
           $stmt = $dbh->prepare('SELECT Username FROM User WHERE ID = ?');
@@ -84,6 +98,20 @@
       
       }catch(PDOException $e) {
         return null;
+      }
+    }
+
+    function getBio($userID) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT Bio FROM User WHERE ID = ?');
+        $stmt->execute(array($userID));
+        if($row = $stmt->fetch()){
+          return $row['Bio'];
+        } else return null;
+      
+      }catch(PDOException $e) {
+        return -1;
       }
     }
 

@@ -31,7 +31,7 @@
         <form action="../actions/signupAction.php" method="post">
             <input type="text" name="name" placeholder="Name">
             <input type="text" name="username" placeholder="Username">
-            <input type="text" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" value="Sign up">
         </form>

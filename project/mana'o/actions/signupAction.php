@@ -16,7 +16,7 @@ include_once('../database/user.php');
  		setCurrentUser($userID, $_POST['username']);
  		header("Location:../index.php"); // redirect the page to the page index
  	}
- 	else{
+ 	else {
   		$_SESSION['ERROR'] = 'ERROR';
   		header("Location:".$_SERVER['HTTP_REFERER']."");
  	}

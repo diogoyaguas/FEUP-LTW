@@ -16,7 +16,14 @@
             <p id="text">
                 <?= $post['Text'] ?>
             </p>
-            <footer><span class="author"><?php getUsername($post['User_ID']) ?></span> <span class="date"><?= $post['Date'] ?></span></footer>
+            <footer>
+                <span class="author">
+                    <?php echo getName($post['User_ID']) ?>
+                </span> 
+                <span class="date">
+                    <?= $post['Date'] ?>
+                </span>
+            </footer>
         </article>
     </div>
 
