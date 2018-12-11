@@ -53,7 +53,7 @@ section#signup form input {
     height: 3em;
 }
 
-section#signup input[type="text"] {
+section#signup input[type="text"], section#signup input[type="email"] {
     background-color: #F5EBED;
     border-radius: 3px 3px;
     border: 2px solid white;  
