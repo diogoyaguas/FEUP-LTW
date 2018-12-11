@@ -42,7 +42,7 @@
         <p>Already have an account? <a href="login.php">Login</a> </p>
     </nav>
 
-    <p> <?php echo htmlentities($error) ?> </p>
+    <p id="errors"> <?php echo htmlentities($error) ?> </p>
 
     <?php
     include_once("footer.php");

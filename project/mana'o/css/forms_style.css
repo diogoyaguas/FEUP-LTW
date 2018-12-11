@@ -80,6 +80,7 @@ section#signup input[type="submit"]:hover {
 
 /* login */
 nav#login {
+    text-align: center;
     position: absolute;
     bottom: 4em;
 }
@@ -97,11 +98,12 @@ nav#login a:hover {
 }
 
 /* errors in login/signup */
-body > p {
+body > p#errors {
     font-size: 1.3em;
     color: rgb(164, 0, 0);
-    text-align: right;
+    text-align: center;
     font-weight: bold;
+    margin: 0;
 }
 
 /* footer */

@@ -7,7 +7,8 @@ body {
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "header signup"
-                         "form form"
+                         ".      error"
+                         "login login"
                          "footer footer";
 }
 
@@ -27,27 +28,24 @@ section#signup {
 }
 
 nav#login {
-    grid-area: form;
-    justify-self: left;
-
-    position: -webkit-sticky;
-    position: sticky;
-    bottom: 1rem;
+    grid-area: login;
+    justify-self: center;
+    position: absolute;
+    bottom: 3em;
     align-self: flex-end;
 }
 
 body > footer {
     grid-area: footer;
-    justify-self: left; 
+    justify-self: center; 
 
-    position: -webkit-sticky;
-    position: sticky;
-    bottom: 1rem;
+    position: absolute;
+    bottom: 2em;
     align-self: flex-end; 
 }
-body > p {
-    display: block;
-
+body > p#errors {
+    grid-area: error;
+    justify-self: center;
 }
 
 /* form grid */
