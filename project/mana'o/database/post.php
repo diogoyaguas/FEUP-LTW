@@ -83,6 +83,22 @@
 		}
 	}
 
+	function getPostByID($postID) 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post WHERE ID = :ID');
+			$stmt->bindParam(':ID', $postID);
+			if($stmt->execute())
+				return $stmt->fetch();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
 	function getAllPosts() 
 	{
 		global $dbh;

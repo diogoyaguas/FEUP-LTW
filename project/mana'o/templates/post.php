@@ -12,7 +12,7 @@
                 ?>
     <div id="posts">
         <article>
-            <h3 id="title"><?= $post['Title'] ?></h3>
+            <a id="title" href="viewPost.php?id=<?=$post['ID']?>" target="_blank"><?= $post['Title'] ?></a>
             <p id="text">
                 <?= $post['Text'] ?>
             </p>
