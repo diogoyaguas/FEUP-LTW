@@ -2,10 +2,17 @@
     include_once('../includes/init.php');
     include_once("../database/post.php");
             function makePosts() {
-                $posts = getFiveMostRecentPosts();
-            foreach($posts as $post)
+                $posts = getAllPosts();
+            foreach($posts as $post) {
                 makePost($post);
+                $comments = getPostComments($post['ID']);
+                foreach($comments as $comment){
+                    makeComment($comment);
+                    unset($comment);
+                }
+                unset($comments);
                 unset($post);
+                }
             }
 
             function makePost($post) {
@@ -27,4 +34,29 @@
         </article>
     </div>
 
-    <?php } ?>
+    <?php }
+        function makeComment($comment) {
+    ?>
+    <div id="comments">
+        <article>
+        <p id="name"> <?php echo getName($comment['User_ID']) ?> </p>
+        <div id="commentText">
+                            <?php
+                            // The Regular Expression filter
+                            $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
+                            // The Text you want to filter for urls
+                            $text = $comment['Text'];
+                            // Check if there is a url in the text
+                            if (preg_match($reg_exUrl, $text, $url)) {
+                                // make the urls hyper links
+                                echo preg_replace($reg_exUrl, '<a href="' . $url[0] . '" rel="nofollow">' . $url[0] . '</a>', $text);
+                            } else {
+                                // if no urls in the text just return the text
+                                echo $text;
+                            }
+                            ?>
+                            </div>
+        <p id="commentDate"> <?=$comment['Date'] ?> </p>
+        </article>
+    </div>
+        <?php } ?>

@@ -129,4 +129,20 @@
 		}
 	}
 
+	function getPostComments($postID) 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Comments WHERE Post_ID = :ID');
+			$stmt->bindParam(':ID', $postID);
+			if($stmt->execute())
+				return $stmt->fetchAll();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
 ?>
