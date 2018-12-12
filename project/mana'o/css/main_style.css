@@ -22,8 +22,8 @@ body > header {
     margin: 0
 }
 
-body > header h3{
-    margin-top: 4em;
+body > header > h3{
+    margin-top: 2em;
 
     font-family: 'Julius Sans One', sans-serif;
     font-size: 0.9em;
@@ -46,15 +46,20 @@ body > header h3{
 
 
 /* navigation */
-#menu ul {
-    margin: 0;
-    padding: 0;
+#menu {
+    
+    width: 100%;
 }
-  
+#menu ol {
+    margin:0;
+    padding: 0;
+} 
 #menu li {
-    text-align: center;
+    align-items: center;
     list-style-type: none;
-  }
+    margin:1em 0;
+    width: 100%;
+}
   
   #menu li a{
     font-family: 'Julius Sans One', sans-serif;
@@ -63,9 +68,11 @@ body > header h3{
 
     text-decoration: none;
     text-align: center;
+    height: 100%;
   }
   
-  #menu li:hover {
+  /*using this normally but when it's fully filled it's supposed to be :hover"*/
+  #menu li {
     background-color: var(--color_separator);
   }
   
@@ -73,14 +80,11 @@ body > header h3{
     color: white;
   }
 
-  nav > ul > li{
+  nav > ol > li{
     border-left: 2px solid var(--color_manao);
-    padding: 2em;
-    margin-left: 0;
 }
 
-#menu #profile {
-    position: relative;
+#profile {
     width: 100px;
     height: 100px;
     border:7px solid white;

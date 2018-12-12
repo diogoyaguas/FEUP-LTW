@@ -15,14 +15,15 @@
         <input class="homeButton" type="submit_home" value="" onclick="window.location='home.php';">
         <h3>M A N A ' O</h3>
         <nav id="menu">
-            <ul>
+            <ol>
                 <li><a href="home.php">Home</a></li>
                 <li><a href="http://www.pixelthoughts.co/#">Safe Haven</a></li>
                 <li><a href="#threads">Threads</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contacts.php">Contacts</a></li>
-            </ul>
-            <div class="dropdown">
+            </ol>
+        </nav>
+        <div class="dropdown">
                 <img id="profile" src="../profilePictures/<?php
                     include_once('../includes/init.php');
                     include_once("../database/user.php");
@@ -37,5 +38,4 @@
             </div>
 
             <script src="../scripts/dropdown.js"></script>
-        </nav>
     </header>

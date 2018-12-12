@@ -3,30 +3,74 @@ body {
 }
 
 body > header {
-    display: flex;
-    
-    flex: auto;
-    align-content: space-around;
-    width: auto;
-}
+    margin: 0em;
+    display: grid;
 
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 5fr 1fr;
+    grid-template-areas: "manao name navigator profilepic";
 
-#menu ul {
-    margin:0;
     width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: flex-end;
+}
+.homeButton{
+    grid-area: manao;
+    justify-self: left;
+    align-self: center;
+}
+body > header > h3 {
+    grid-area: name;
+    margin: 0em;
+    justify-self: left;
+    align-self: center;
+}
+#menu{
+    grid-area: navigator;
+    justify-self: right;
+    align-self: center;
 
     background-color: white;
 }
-
-#menu ul li{
-    flex: auto;
+#menu > .dropdown {
+    grid-area: profilepic;
+    justify-self: right;
+    align-self: center;
+}
+#menu ol li{
+    display: inline-flex;
+    width: auto;
+    justify-self: center;
+    gap: 10px;
 }
 
+#menu ol {
+    margin: 0em;
+    display: grid;
+
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "home safehaven threads contacts about";
+    
+    width: 100%;
+}
+#menu ol > li{
+    justify-self: center;
+    align-self: center;
+}
+#menu ol > :nth-child(1) {
+    grid-area: home;
+}
+#menu ol > :nth-child(2) {
+    grid-area: safehaven;
+}
+#menu ol > :nth-child(3) {
+    grid-area: threads;
+}
+#menu ol > :nth-child(4) {
+    grid-area: contacts;
+}
+#menu ol > :nth-child(5) {
+    grid-area: about;
+}
 /* ABOUT */
 section #about{
     display: grid;
@@ -72,6 +116,8 @@ section #about {
   .dropdown-content {
     display: none;
     position: absolute;
+    font-family: 'Julius Sans One', sans-serif;
+    color: var(--color_text);
     background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
