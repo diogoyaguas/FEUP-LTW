@@ -10,16 +10,18 @@ body > header {
     grid-template-columns: 1fr 1fr 5fr 1fr;
     grid-template-areas: "manao name navigator profilepic";
 
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+
     width: 100%;
 }
+
 .homeButton{
     grid-area: manao;
     justify-self: right;
     align-self: center;
     height: auto;
-}
-.homeButton:focus{
-    outline:none
 }
 body > header > h3 {
     grid-area: name;
@@ -74,6 +76,42 @@ body > header > h3 {
 }
 #menu ol > :nth-child(5) {
     grid-area: about;
+}
+
+/* HOME */ 
+.home {
+    margin: 6em;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas: "image companyname posts"
+                         "profilepicture username posts";
+
+    width: 100%;
+}
+.home > #logo{
+    grid-area: image;
+    align-self: right;
+    justify-self: center;
+}
+.home > h1{
+    grid-area: companyname;
+}
+.home > h3{
+    grid-area: username;
+    align-self: center;
+    justify-self: center;
+}
+.home > #friendsPosts, .home > h2{
+    grid-area: posts;
+    align-self: right;
+    justify-self: center;
+}
+.home > img#profilepicture{
+    grid-area: profilepicture;
+    align-self: center;
+    justify-self: right;
 }
 /* ABOUT */
 section #about{

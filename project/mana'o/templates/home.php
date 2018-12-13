@@ -19,11 +19,13 @@
         <section class="home">
             <img id="logo" src="../images/icon_big.png" alt="Site's icon">
             <h1>M a n a ' o</h1>
-            <img id="profile" src="../profilePictures/<?php
+            <img id="profilepicture" src="../profilePictures/<?php
                 include_once('../includes/init.php');
                 include_once("../database/user.php");
                 echo getUserPhoto($_SESSION['userID']);
             ?>" alt="Profile picture">
+            <h2>RECENT POSTS</h2>
+            <h3>N O M E    D O   U S E R</h3>
             <div id="friendsPosts" >
                 <?php 
                     include_once('post.php');

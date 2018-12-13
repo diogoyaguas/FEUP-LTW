@@ -19,7 +19,8 @@ body{
 }
 
 body > header {
-    margin: 0
+    margin: 0;
+    background-color: var(--maincolor_bckgrnd);
 }
 
 body > header > h3{
@@ -35,7 +36,6 @@ body > header > h3{
 
 
 .homeButton{
-
     background:url(../images/icon.png) no-repeat;
     cursor:pointer;
     border:none;
@@ -91,6 +91,14 @@ body > header > h3{
     margin-top: 8px;
     width: 75px;
     height: 75px;
+    border:5px solid white;
+    border-radius: 100px 100px;
+}
+
+
+.home > img#profilepicture{    margin-top: 8px;
+    width: 150px;
+    height: 150px;
     border:5px solid white;
     border-radius: 100px 100px;
 }
