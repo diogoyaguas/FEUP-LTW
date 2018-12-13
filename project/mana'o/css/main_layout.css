@@ -14,8 +14,9 @@ body > header {
 }
 .homeButton{
     grid-area: manao;
-    justify-self: left;
+    justify-self: right;
     align-self: center;
+    height: auto;
 }
 body > header > h3 {
     grid-area: name;
@@ -28,7 +29,6 @@ body > header > h3 {
     justify-self: right;
     align-self: center;
 
-    background-color: white;
 }
 #menu > .dropdown {
     grid-area: profilepic;
@@ -37,9 +37,8 @@ body > header > h3 {
 }
 #menu ol li{
     display: inline-flex;
-    width: auto;
+    width: 100%;
     justify-self: center;
-    gap: 10px;
 }
 
 #menu ol {
@@ -53,8 +52,10 @@ body > header > h3 {
     width: 100%;
 }
 #menu ol > li{
-    justify-self: center;
+    justify-self: left;
     align-self: center;
+    justify-items: center;
+    justify-content: space-evenly;
 }
 #menu ol > :nth-child(1) {
     grid-area: home;
