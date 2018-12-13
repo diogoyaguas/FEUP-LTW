@@ -95,15 +95,17 @@ body > header > h3 {
     align-self: right;
     justify-self: center;
 }
-.home > h1{
+.home > h2{
     grid-area: companyname;
+    align-self: right;
+    justify-self: center;
 }
-.home > h3{
+.home > h4{
     grid-area: username;
     align-self: center;
     justify-self: center;
 }
-.home > #friendsPosts, .home > h2{
+.home > #friendsPosts, .home > h3{
     grid-area: posts;
     align-self: right;
     justify-self: center;
