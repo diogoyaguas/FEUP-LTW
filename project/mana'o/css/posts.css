@@ -107,3 +107,9 @@
     cursor: pointer;
     background-color: var(--color_separator);   
 }
+
+.add_post label[id="values"]{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    color: #ece7c5;
+}
