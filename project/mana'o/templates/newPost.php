@@ -22,17 +22,18 @@ include_once("header.php");
                     <input type="text" placeholder="T I T L E   O F   P O S T" name="Title" required>
                 </div>
                 <div>
-                    <input id="categories" type="submitincate" placeholder="Categories">
+                    <input id="categories" type="submitincate" placeholder="Categories" maxlength="15">
                     <input id="array" type="hidden" name="Insert Categories">
                     <button id="add" onclick='addRecord()'  style="display: none;" >Button</button>
                     <label id='values' onclick='clearLabel()'></label>
                     <script src="../scripts/addCategories.js"></script>
                 </div>
                 <div>
-                    <textarea rows="9" cols="30" placeholder="Insert Text or Image(Optional)" name="Post" wrap="hard"></textarea>
+                    <textarea rows="9" cols="30" placeholder="Insert Text or Image(Optional)" name="Post" wrap="hard" required></textarea>
                 </div>
                 <div>
-                    <input type="submit" value="Post" onClick='document.getElementById("post").submit()'>
+                    <input type="submit" value="Post" onClick='validateForm()'>
+                    <script src="../scripts/validatePost.js"></script>
                 </div>
             </form>
 
