@@ -13,7 +13,8 @@ function addRecord() {
   text = inp.value.replace(/^\s+/, '').replace(/\s+$/, '');
   console.log(values);
   if (text !== '') {
-    values.push(inp.value);
+    
+    values.push(inp.value.toUpperCase());
     inp.value = "";
     displayRecord();
   }

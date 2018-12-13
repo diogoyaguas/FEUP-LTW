@@ -39,7 +39,6 @@ include_once("header.php");
             <p id="errors">
         <?php if(isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR'])?>
     </p>
-        
         </section>
     </body>
 
