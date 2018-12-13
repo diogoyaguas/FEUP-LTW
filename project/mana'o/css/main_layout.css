@@ -18,6 +18,9 @@ body > header {
     align-self: center;
     height: auto;
 }
+.homeButton:focus{
+    outline:none
+}
 body > header > h3 {
     grid-area: name;
     margin: 0em;
