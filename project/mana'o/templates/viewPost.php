@@ -25,16 +25,28 @@ include_once ("header.php");
             <section class="viewPost">
                 <div id="post">
                 <article>
+                <header>
+                        <span class="author"><?php echo getName($post['User_ID']) ?></span>
+                        <span class="date"><?=$post['Date'] ?></span>
+                    </header>
                     <div>
                         <h1><?=$post['Title'] ?></h1>
                     </div>
                     <div>
                         <p id="text"><?=$post['Text'] ?></p>
                     </div>
+
                     <footer>
-                        <span class="author"><?php echo getName($post['User_ID']) ?></span>
-                        <span class="date"><?=$post['Date'] ?></span>
-                    </footer>
+                <script src="../scripts/votes.js"></script>
+                <div id="upvotes" onclick="upvote(<?=$post['ID']?>)">
+                    <p id="upvote<?=$post['ID']?>"><?=$post['Upvotes']?></p>
+                    <img src="https://png.pngtree.com/svg/20161205/upvote_25309.png" alt="Downvote">
+                </div>
+                <div id="downvotes" onclick="downvote(<?=$post['ID']?>)">
+                    <p id="downvote<?=$post['ID']?>"><?=$post['Downvotes']?></p>
+                    <img src="https://cdn0.iconfinder.com/data/icons/thin-voting-awards/24/thin-0664_dislike_thumb_down_vote-512.png" alt="Downvote">
+                </div>
+            </footer>
                 </article>
 
                 <p id="errors">

@@ -2,7 +2,7 @@
     include_once('../includes/init.php');
     include_once("../database/post.php");
             function makePosts() {
-                $posts = getAllPosts();
+                $posts = getFiveMostRecentPosts();
             foreach($posts as $post) {
                 makePost($post);
                 $comments = getPostComments($post['ID']);
@@ -19,17 +19,28 @@
                 ?>
     <div id="posts">
         <article>
-            <a id="title" href="viewPost.php?id=<?=$post['ID']?>" target="_blank"><?= $post['Title'] ?></a>
-            <p id="text">
-                <?= $post['Text'] ?>
-            </p>
-            <footer>
+            <header>
                 <span class="author">
                     <?php echo getName($post['User_ID']) ?>
                 </span> 
                 <span class="date">
                     <?= $post['Date'] ?>
                 </span>
+            </header>
+            <a id="title" href="viewPost.php?id=<?=$post['ID']?>" target="_blank"><?= $post['Title'] ?></a>
+            <p id="text">
+                <?= $post['Text'] ?>
+            </p>
+            <footer>
+                <script src="../scripts/votes.js"></script>
+                <div id="upvotes" onclick="upvote(<?=$post['ID']?>)">
+                    <p id="upvote<?=$post['ID']?>"><?=$post['Upvotes']?></p>
+                    <img src="https://png.pngtree.com/svg/20161205/upvote_25309.png" alt="Downvote">
+                </div>
+                <div id="downvotes" onclick="downvote(<?=$post['ID']?>)">
+                    <p id="downvote<?=$post['ID']?>"><?=$post['Downvotes']?></p>
+                    <img src="https://cdn0.iconfinder.com/data/icons/thin-voting-awards/24/thin-0664_dislike_thumb_down_vote-512.png" alt="Downvote">
+                </div>
             </footer>
         </article>
     </div>

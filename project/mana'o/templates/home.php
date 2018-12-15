@@ -25,7 +25,7 @@
                 echo getUserPhoto($_SESSION['userID']);
             ?>" alt="Profile picture">
             <h3>RECENT POSTS</h3>
-            <h4>N O M E    D O   U S E R</h4>
+            <h4><?=$_SESSION['username']?></h4>
             <div id="friendsPosts" >
                 <?php 
                     include_once('post.php');
