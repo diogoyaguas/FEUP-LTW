@@ -2,13 +2,13 @@
     function createPost($user, $title, $text)
     {
 		global $dbh;
-		$date = getDate()['year'].'/'.getDate()['mon'].'/'.getDate()['mday'].', '.getDate()['hours'].':'.getDate()['minutes'];
+		$date = date('Y/m/d, H:i');
 		try {
 			$stmt = $dbh->prepare('INSERT INTO Post(User_ID, Title, Text, Date) VALUES (:User, :Title, :Text, :Date)');
 			$stmt->bindParam(':User', $user);
-      $stmt->bindParam(':Title', $title);
-      $stmt->bindParam(':Text', $text);
-      $stmt->bindParam(':Date', $date);
+			$stmt->bindParam(':Title', $title);
+			$stmt->bindParam(':Text', $text);
+			$stmt->bindParam(':Date', $date);
 			if($stmt->execute())
 				return getPostID($user, $title, $text);
 			else
@@ -140,6 +140,36 @@
 			else
 				return -1;
 
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
+	function updateUpvotes($votes, $postID)
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('UPDATE Post SET Upvotes = ? WHERE ID = ?');
+			if($stmt->execute(array($votes, $postID)))
+            	return true;
+        	else{
+          		return false;
+       	 	}   
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
+	function updateDownvotes($votes, $postID)
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('UPDATE Post SET Downvotes = ? WHERE ID = ?');
+			if($stmt->execute(array($votes, $postID)))
+            	return true;
+        	else{
+          		return false;
+       	 	}   
 		} catch(PDOException $e) {
 			return -1;
 		}

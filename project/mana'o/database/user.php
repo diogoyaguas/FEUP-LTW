@@ -17,7 +17,7 @@
     function createUser($username, $password, $name, $email) {
       global $dbh;
       $passwordhashed = hash('sha256', $password);
-      $date = getDate()['year'] . '/' . getDate()['month'];
+      $date = date('Y/m');
       try {
         $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email, ParticipationDate) VALUES (:Username,:Password,:Name,:Email,:ParticipationDate)');
         $stmt->bindParam(':Username', $username);

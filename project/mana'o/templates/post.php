@@ -32,7 +32,7 @@
                 <?= $post['Text'] ?>
             </p>
             <footer>
-                <script src="../scripts/votes.js"></script>
+                <script src="../scripts\votes.js"></script>
                 <div id="upvotes" onclick="upvote(<?=$post['ID']?>)">
                     <p id="upvote<?=$post['ID']?>"><?=$post['Upvotes']?></p>
                     <img src="https://png.pngtree.com/svg/20161205/upvote_25309.png" alt="Downvote">
