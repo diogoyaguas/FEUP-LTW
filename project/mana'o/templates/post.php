@@ -1,21 +1,22 @@
 <?php
     include_once('../includes/init.php');
     include_once("../database/post.php");
-            function makePosts() {
+            function viewAllPosts() {
                 $posts = getFiveMostRecentPosts();
             foreach($posts as $post) {
-                makePost($post);
+                viewPosts($post);
                 $comments = getPostComments($post['ID']);
                 foreach($comments as $comment){
-                    makeComment($comment);
+                    viewComments($comment);
                     unset($comment);
                 }
+                makeComment();
                 unset($comments);
                 unset($post);
                 }
             }
 
-            function makePost($post) {
+            function viewPosts($post) {
                 ?>
     <div id="posts">
         <article>
@@ -31,22 +32,23 @@
             <p id="text">
                 <?= $post['Text'] ?>
             </p>
-            <footer>
-                <script src="../scripts\votes.js"></script>
+            <footer id="votes">
+                <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+                <script src="../scripts/votes.js"></script>
                 <div id="upvotes" onclick="upvote(<?=$post['ID']?>)">
                     <p id="upvote<?=$post['ID']?>"><?=$post['Upvotes']?></p>
-                    <img src="https://png.pngtree.com/svg/20161205/upvote_25309.png" alt="Downvote">
+                    <img src="" alt="Downvote">
                 </div>
                 <div id="downvotes" onclick="downvote(<?=$post['ID']?>)">
                     <p id="downvote<?=$post['ID']?>"><?=$post['Downvotes']?></p>
-                    <img src="https://cdn0.iconfinder.com/data/icons/thin-voting-awards/24/thin-0664_dislike_thumb_down_vote-512.png" alt="Downvote">
+                    <img src="" alt="Downvote">
                 </div>
             </footer>
         </article>
     </div>
 
     <?php }
-        function makeComment($comment) {
+        function viewComments($comment) {
     ?>
     <div id="comments">
         <article>
@@ -69,5 +71,20 @@
                             </div>
         <p id="commentDate"> <?=$comment['Date'] ?> </p>
         </article>
+        <?php }
+        
+        function makeComment() {
+            ?>
+    <form>
+        <h2>Add your voice...</h2>
+        <label>Username
+            <?=$_SESSION['username']?>
+        </label>
+        <label>Comment
+            <textarea name="text"></textarea>
+        </label>
+            <input type="submit" value="Reply">
+    </form>
     </div>
-        <?php } ?>
+
+       <?php }?>

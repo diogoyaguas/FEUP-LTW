@@ -49,8 +49,8 @@
 		}
     }
 
-		function changeTitlePost($postID, $newTitle) 
-		{
+	function changeTitlePost($postID, $newTitle) 
+	{
 		global $dbh;
 		try {
 			$stmt = $dbh->prepare('UPDATE Post SET Title = :Title WHERE ID = :ID');
@@ -66,8 +66,8 @@
 		}
     }
 
-		function changeTextPost($postID, $newText) 
-		{
+	function changeTextPost($postID, $newText) 
+	{
 		global $dbh;
 		try {
 			$stmt = $dbh->prepare('UPDATE Post SET Text = :Text WHERE ID = :ID');
@@ -166,6 +166,36 @@
 		try {
 			$stmt = $dbh->prepare('UPDATE Post SET Downvotes = ? WHERE ID = ?');
 			if($stmt->execute(array($votes, $postID)))
+            	return true;
+        	else{
+          		return false;
+       	 	}   
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
+	function getUserUpVoteOnPost($userID, $postID) 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from UpPost WHERE User_ID = ? AND Post_ID = ?');
+			if($stmt->execute(array($userID, $postID)))
+            	return true;
+        	else{
+          		return false;
+       	 	}   
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
+	function getUserDownVoteOnPost($userID, $postID) 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from DownPost WHERE User_ID = ? AND Post_ID = ?');
+			if($stmt->execute(array($userID, $postID)))
             	return true;
         	else{
           		return false;

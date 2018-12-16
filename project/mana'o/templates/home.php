@@ -29,7 +29,7 @@
             <div id="friendsPosts" >
                 <?php 
                     include_once('post.php');
-                    makePosts();
+                    viewAllPosts();
                 ?>
             </div>
         </section>
