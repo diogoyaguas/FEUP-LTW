@@ -16,6 +16,15 @@
 
     function createUser($username, $password, $name, $email) {
       global $dbh;
+
+      if(!preg_match('/[0-9a-zA-Z_-]+$/', $username)) return -1;
+
+      if(!preg_match('/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/', $password)) return -1;
+
+      if(!preg_match('/[a-zA-Z]+$/', $name)) return -1;
+
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) return -1;
+
       $passwordhashed = hash('sha256', $password);
       $date = date('Y/m');
       try {
