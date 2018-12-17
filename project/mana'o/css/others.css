@@ -146,12 +146,12 @@
     margin: 0;
     color: var(--color_smallhover);
 }
-.home #logo {
+.home > #sidebar_left > #logo {
     float: left;
     margin-left: 5em;
     margin-top: 7em;
 }
-.home h1{
+.home > #sidebar_left > h1{
     position: absolute;
     top: 7em;
     left: 6.5em;

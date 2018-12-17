@@ -95,10 +95,30 @@ body > header > h3{
     border-radius: 100px 100px;
 }
 
-
-.home > img#profilepicture{    margin-top: 8px;
-    width: 150px;
-    height: 150px;
+.home > #friendsPosts{
+    background-color: var(--color_manao);
+}
+.home > #sidebar_left > #profilepicture {    margin-top: 8px;
+    width: 125px;
+    height: 125px;
     border:5px solid white;
     border-radius: 100px 100px;
 }
+
+.home > #sidebar_left > h2, .home > #sidebar_left > h3{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2em;
+    color: var(--color_text);
+
+    text-align: center;
+    height: auto;
+}
+.home > #sidebar_left > h4 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.5em;
+    color: var(--color_text);
+    
+    text-align: center;
+    height: auto;
+}
+

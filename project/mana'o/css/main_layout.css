@@ -84,37 +84,57 @@ body > header > h3 {
     margin-bottom: 0;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-areas: "image companyname posts"
-                         "profilepicture username posts";
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "sidebar_left posts"
+                         ". posts";
 
-    width: 100%;
+    width: auto;  
+    height: auto;
+    align-content: space-between;
+    justify-content: space-between;
 }
-.home > #logo{
+.home > #sidebar_left{
+    grid-area: sidebar_left;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image companyname"
+                         "profilepicture username";
+                         
+    width: auto;
+    height: auto;
+}
+.home > #sidebar_left > #logo{
     grid-area: image;
     align-self: right;
     justify-self: center;
 }
-.home > h2{
+.home > #sidebar_left > h2{
     grid-area: companyname;
-    align-self: right;
-    justify-self: center;
-}
-.home > h4{
-    grid-area: username;
     align-self: center;
-    justify-self: center;
+    justify-self: left;
+    width: 100%;
+}
+.home > #sidebar_left > h4{
+    grid-area: username;
+    justify-self: left;
+    align-self: left;
 }
 .home > #friendsPosts, .home > h3{
     grid-area: posts;
-    align-self: right;
-    justify-self: center;
-}
-.home > img#profilepicture{
-    grid-area: profilepicture;
     align-self: center;
+    justify-self: left;
+    width: 80%;  
+    height: auto;     
+}
+.home > #sidebar_left > img#profilepicture{
+    grid-area: profilepicture;
+    align-self: right;
     justify-self: right;
 }
+
+
+
 /* ABOUT */
 section #about{
     display: grid;
@@ -181,3 +201,7 @@ section #about {
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
+
+
+
+  

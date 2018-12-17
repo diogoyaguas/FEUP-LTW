@@ -51,7 +51,7 @@ include_once ("header.php");
 						<?=$post['ID']?>">
 						<?=$post['Upvotes']?>
 					</p>
-					<img src="https://png.pngtree.com/svg/20161205/upvote_25309.png" alt="Downvote">
+					<img src="../images/upvote.png"alt="Upvote">
 					</div>
 					<div id="downvotes" onclick="downvote(
 						<?=$post['ID']?>)">
@@ -59,7 +59,7 @@ include_once ("header.php");
 							<?=$post['ID']?>">
 							<?=$post['Downvotes']?>
 						</p>
-						<img src="https://cdn0.iconfinder.com/data/icons/thin-voting-awards/24/thin-0664_dislike_thumb_down_vote-512.png" alt="Downvote">
+					<img src="../images/downvote.png"alt="Downvote">
 						</div>
 					</footer>
 				</article>
