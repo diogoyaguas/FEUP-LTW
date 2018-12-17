@@ -133,6 +133,34 @@ body > header > h3 {
     justify-self: right;
 }
 
+.home > #friendsPosts > article#posts{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "info_span"
+                         "title"
+                         "text_wrote"
+                         "votes";
+                         
+    width: auto;
+    height: auto;
+}
+.home > #friendsPosts > article#posts > header > .author, .home > #friendsPosts > article#posts > header > .date { grid-area: info_span;}
+.home > #friendsPosts > article#posts > a#title{grid-area: title;}
+.home > #friendsPosts > article#posts > p#text_wrote{grid-area: text_wrote;}
+
+.home > #friendsPosts > article#posts > footer#votes{
+    grid-area: votes;
+    
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    justify-content: space-evenly;
+    justify-items: flex-start;
+
+    width: auto;
+    height: auto;
+} 
 
 
 /* ABOUT */

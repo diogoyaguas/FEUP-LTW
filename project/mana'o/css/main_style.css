@@ -9,6 +9,7 @@
     --color_separator: #996666;
     --color_text: #000000;
     --color_manao: #D35763;
+    --color_manao2: #DF7175;
     --color_smallhover: #2a2f33;
 }
 
@@ -71,11 +72,16 @@ body > header > h3{
     text-decoration: none;
     text-align: center;
     height: auto;
+
+    
+    -webkit-transition: color 0.6s;
+    transition: color 0.6s ease;
   }
-  
-  /*using this normally but when it's fully filled it's supposed to be :hover"*/
+
   #menu li:hover {
-    background-color: var(--color_separator);
+    -webkit-transition: background-color 0.6s;
+    transition: background-color 0.6s ease;
+    background-color: var(--color_separator); 
   }
   
   #menu li:hover a{
@@ -95,10 +101,8 @@ body > header > h3{
     border-radius: 100px 100px;
 }
 
-.home > #friendsPosts{
-    background-color: var(--color_manao);
-}
-.home > #sidebar_left > #profilepicture {    margin-top: 8px;
+.home > #sidebar_left > #profilepicture {
+    margin-top: 8px;
     width: 125px;
     height: 125px;
     border:5px solid white;
@@ -121,4 +125,3 @@ body > header > h3{
     text-align: center;
     height: auto;
 }
-
