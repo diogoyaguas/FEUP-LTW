@@ -30,7 +30,7 @@
                 ?>" alt="Profile picture" onclick="myFunction()" class="dropbtn">
                 <div id="myDropdown" class="dropdown-content">
                     <a href="myManao.php">My Mana'o</a>
-                    <a href="#">My Friends</a>
+                    <a href="newPost.php">New Post</a>
                     <a href="#">Channels</a>
                     <a href="../actions/logoutAction.php">Log out</a>
                 </div>

@@ -39,9 +39,8 @@ include_once ("header.php");
 				</h1>
 			</div>
 			<div>
-				<p id="text">
-					<?=$post['Text'] ?>
-				</p>
+				<pre id="text"><?php include('../actions/verifyAndConvertText.php'); convertText($post['Text']); ?>
+				</pre>
 			</div>
 			<footer>
 				<script src="../scripts/votes.js"></script>
@@ -76,19 +75,7 @@ include_once ("header.php");
 					</p>
 					<div id="commentText">
 						<?php
-                            // The Regular Expression filter
-                            $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-                            // The Text you want to filter for urls
-                            $text = $comment['Text'];
-                            // Check if there is a url in the text
-                            if (preg_match($reg_exUrl, $text, $url)) {
-                                // make the urls hyper links
-                                echo preg_replace($reg_exUrl, '
-						<a href="' . $url[0] . '" rel="nofollow">' . $url[0] . '</a>', $text);
-                            } else {
-                                // if no urls in the text just return the text
-                                echo $text;
-                            }
+                            
                             ?>
 					</div>
 					<p id="commentDate">
