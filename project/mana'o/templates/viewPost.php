@@ -17,73 +17,69 @@ include_once ("header.php");
 
     <body>
         <?php
-            include_once ('../includes/init.php');
-            include_once ("../database/post.php");
+            include_once ("../includes/init.php");
+			include_once ("../database/post.php");
+			include_once ("../actions/verifyAndConvertText.php"); 
             $post = getPostByID($_GET['id']);
             $comments = getPostComments($_GET['id']);
         ?>
             <section class="viewPost">
-	<div id="post">
-		<article>
-			<header>
-				<span class="author">
-					<?php echo getName($post['User_ID']) ?>
-				</span>
-				<span class="date">
-					<?=$post['Date'] ?>
-				</span>
-			</header>
-			<div>
-				<h1>
-					<?=$post['Title'] ?>
-				</h1>
-			</div>
-			<div>
-				<pre id="text"><?php include('../actions/verifyAndConvertText.php'); convertText($post['Text']); ?>
-				</pre>
-			</div>
-			<footer>
-				<script src="../scripts/votes.js"></script>
-				<div id="upvotes" onclick="upvote(
-					<?=$post['ID']?>)">
-					<p id="upvote
-						<?=$post['ID']?>">
-						<?=$post['Upvotes']?>
-					</p>
-					<img src="../images/upvote.png"alt="Upvote">
-					</div>
-					<div id="downvotes" onclick="downvote(
-						<?=$post['ID']?>)">
-						<p id="downvote
-							<?=$post['ID']?>">
-							<?=$post['Downvotes']?>
-						</p>
-					<img src="../images/downvote.png"alt="Downvote">
+				<div id="post">
+					<article>
+						<header>
+							<span class="author">
+								<?php echo getName($post['User_ID']) ?>
+							</span>
+							<span class="date">
+								<?=$post['Date'] ?>
+							</span>
+						</header>
+						<div>
+							<h1>
+								<?=$post['Title'] ?>
+							</h1>
+						</div>
+						<div>
+							<pre id="text"><?php convertText($post['Text']); ?></pre>
+						</div>
+					</article>
+					<footer>
+						<script src="../scripts/votes.js"></script>
+						<div id="upvotes" onclick="upvote(<?=$post['ID']?>)">
+							<p id="upvote<?=$post['ID']?>">
+								<?=$post['Upvotes']?>
+							</p>
+							<img src="../images/upvote.png"alt="Upvote">
+						</div>
+						<div id="downvotes" onclick="downvote(<?=$post['ID']?>)">
+							<p id="downvote<?=$post['ID']?>">
+								<?=$post['Downvotes']?>
+							</p>
+							<img src="../images/downvote.png"alt="Downvote">
 						</div>
 					</footer>
-				</article>
-				<p id="errors">
-					<?php if (isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']);
-                    unset($_SESSION['ERROR']) ?>
-				</p>
-			</div>
-			<?php  foreach($comments as $comment){ ?>
-			<div id="comments">
-				<article>
-					<p id="name">
-						<?php echo getName($comment['User_ID']) ?>
-					</p>
-					<div id="commentText">
-						<?php
-                            
+					
+				</div>
+				<?php  foreach($comments as $comment){ ?>
+					<div id="comments">
+						<article>
+							<p id="name">
+								<?php echo getName($comment['User_ID']) ?>
+							</p>
+							<div id="commentText">
+							<?php
+								convertText($comment['Text']);
                             ?>
+							</div>
+							<p id="commentDate">
+								<?=$comment['Date'] ?>
+							</p>
+						</article>
 					</div>
-					<p id="commentDate">
-						<?=$comment['Date'] ?>
-					</p>
-				</article>
-			</div>
-			<?php unset($comment); } ?>
-		</section>
+				<?php unset($comment); } ?>
+			</section>
+			<p id="errors">
+				<?php if (isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR']) ?>
+			</p>
 	</body>
 </html>

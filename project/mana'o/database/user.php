@@ -28,13 +28,8 @@
       $passwordhashed = hash('sha256', $password);
       $date = date('Y/m');
       try {
-        $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email, ParticipationDate) VALUES (:Username,:Password,:Name,:Email,:ParticipationDate)');
-        $stmt->bindParam(':Username', $username);
-        $stmt->bindParam(':Password', $passwordhashed);
-        $stmt->bindParam(':Name', $name);
-        $stmt->bindParam(':Email', $email);
-        $stmt->bindParam(':ParticipationDate', $date);
-        if($stmt->execute()){
+        $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email, ParticipationDate) VALUES (?,?,?,?,?)');
+        if($stmt->execute(array($username, $password, $name, $email, $date))){
           $id = getID($username);
           return $id;
         }
@@ -102,7 +97,6 @@
       global $dbh;
       try {
         $stmt = $dbh->prepare('SELECT Profile_Pic FROM User WHERE ID = ?');
-        
         if($stmt->execute(array($userID))) {
           $row = $stmt->fetch();
           return $row['Profile_Pic'];

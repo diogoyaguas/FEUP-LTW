@@ -4,12 +4,8 @@
 		global $dbh;
 		$date = date('Y/m/d, H:i');
 		try {
-			$stmt = $dbh->prepare('INSERT INTO Post(User_ID, Title, Text, Date) VALUES (:User, :Title, :Text, :Date)');
-			$stmt->bindParam(':User', $user);
-			$stmt->bindParam(':Title', $title);
-			$stmt->bindParam(':Text', $text);
-			$stmt->bindParam(':Date', $date);
-			if($stmt->execute())
+			$stmt = $dbh->prepare('INSERT INTO Post(User_ID, Title, Text, Date) VALUES (?, ?, ?, ?)');
+			if($stmt->execute(array($user, $title, $text, $date)))
 				return getPostID($user, $title, $text);
 			else
 				return -1;
@@ -37,9 +33,8 @@
 	{
 		global $dbh;
 		try {
-			$stmt = $dbh->prepare('DELETE FROM Post WHERE ID = :ID');
-			$stmt->bindParam(':ID', $postID);
-			if($stmt->execute())
+			$stmt = $dbh->prepare('DELETE FROM Post WHERE ID = ?');
+			if($stmt->execute(array($postID)))
 				return true;
 			else
 				return false;
@@ -53,10 +48,8 @@
 	{
 		global $dbh;
 		try {
-			$stmt = $dbh->prepare('UPDATE Post SET Title = :Title WHERE ID = :ID');
-			$stmt->bindParam(':Title', $newTitle);
-			$stmt->bindParam(':ID', $postID);
-			if($stmt->execute())
+			$stmt = $dbh->prepare('UPDATE Post SET Title = ? WHERE ID = ?');
+			if($stmt->execute(array($newTitle, $postID)))
 				return true;
 			else
 				return false;
@@ -70,10 +63,8 @@
 	{
 		global $dbh;
 		try {
-			$stmt = $dbh->prepare('UPDATE Post SET Text = :Text WHERE ID = :ID');
-			$stmt->bindParam(':Text', $newText);
-			$stmt->bindParam(':ID', $postID);
-			if($stmt->execute())
+			$stmt = $dbh->prepare('UPDATE Post SET Text = ? WHERE ID = ?');
+			if($stmt->execute(array($newText, $postID)))
 				return true;
 			else
 				return false;
@@ -87,9 +78,8 @@
 	{
 		global $dbh;
 		try {
-			$stmt = $dbh->prepare('SELECT * from Post WHERE ID = :ID');
-			$stmt->bindParam(':ID', $postID);
-			if($stmt->execute())
+			$stmt = $dbh->prepare('SELECT * from Post WHERE ID = ?');
+			if($stmt->execute(array($postID)))
 				return $stmt->fetch();
 			else
 				return -1;
@@ -133,9 +123,8 @@
 	{
 		global $dbh;
 		try {
-			$stmt = $dbh->prepare('SELECT * from Comments WHERE Post_ID = :ID');
-			$stmt->bindParam(':ID', $postID);
-			if($stmt->execute())
+			$stmt = $dbh->prepare('SELECT * from Comments WHERE Post_ID = ?');
+			if($stmt->execute(array($postID)))
 				return $stmt->fetchAll();
 			else
 				return -1;
