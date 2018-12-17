@@ -44,15 +44,14 @@ include_once ("header.php");
 						</div>
 					</article>
 					<footer>
-						<script src="../scripts/votes.js"></script>
-						<div id="upvotes" onclick="upvote(<?=$post['ID']?>)">
-							<p id="upvote<?=$post['ID']?>">
+						<div id="upvotes">
+							<p id="upvote">
 								<?=$post['Upvotes']?>
 							</p>
 							<img src="../images/upvote.png"alt="Upvote">
 						</div>
-						<div id="downvotes" onclick="downvote(<?=$post['ID']?>)">
-							<p id="downvote<?=$post['ID']?>">
+						<div id="downvotes">
+							<p id="downvote">
 								<?=$post['Downvotes']?>
 							</p>
 							<img src="../images/downvote.png"alt="Downvote">
@@ -60,8 +59,9 @@ include_once ("header.php");
 					</footer>
 					
 				</div>
+				<div id="comments">
 				<?php  foreach($comments as $comment){ ?>
-					<div id="comments">
+					
 						<article>
 							<p id="name">
 								<?php echo getName($comment['User_ID']) ?>
@@ -75,11 +75,23 @@ include_once ("header.php");
 								<?=$comment['Date'] ?>
 							</p>
 						</article>
-					</div>
 				<?php unset($comment); } ?>
+				</div>
+					<label>
+						<?=$_SESSION['username']?>
+					</label>
+					<label>Comment
+						<textarea id="newCommentText" name="text" wrap="hard"></textarea>
+					</label>
+					<input id="replyButton" type="submit" value="Reply">
 			</section>
 			<p id="errors">
 				<?php if (isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR']) ?>
 			</p>
+
+			<script type="text/javascript">let postID = "<?php echo $_GET['id'] ?>"; </script>
+			<script src="../scripts/addComment.js"></script>
+			<script src="../scripts/updateDownVotes.js"></script>
+			<script src="../scripts/updateUpVotes.js"></script>
 	</body>
 </html>

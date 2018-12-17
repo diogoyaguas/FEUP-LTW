@@ -169,7 +169,8 @@
 		global $dbh;
 		try {
 			$stmt = $dbh->prepare('SELECT * from UpPost WHERE User_ID = ? AND Post_ID = ?');
-			if($stmt->execute(array($userID, $postID)))
+			$stmt->execute(array($userID, $postID));
+			if($stmt->fetch())
             	return true;
         	else{
           		return false;
@@ -184,7 +185,8 @@
 		global $dbh;
 		try {
 			$stmt = $dbh->prepare('SELECT * from DownPost WHERE User_ID = ? AND Post_ID = ?');
-			if($stmt->execute(array($userID, $postID)))
+			$stmt->execute(array($userID, $postID));
+			if($stmt->fetch())
             	return true;
         	else{
           		return false;
