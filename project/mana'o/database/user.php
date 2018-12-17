@@ -29,7 +29,7 @@
       $date = date('Y/m');
       try {
         $stmt = $dbh->prepare('INSERT INTO User(Username, Password, Name, Email, ParticipationDate) VALUES (?,?,?,?,?)');
-        if($stmt->execute(array($username, $password, $name, $email, $date))){
+        if($stmt->execute(array($username, $passwordhashed, $name, $email, $date))){
           $id = getID($username);
           return $id;
         }

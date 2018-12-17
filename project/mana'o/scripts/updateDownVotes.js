@@ -1,19 +1,18 @@
-let downvotesRequest = new XMLHttpRequest();
+var downvotesRequest = new XMLHttpRequest();
 
 downvotesRequest.onreadystatechange = function () {
     if(this.readyState === 4 && this.status === 200) {
 
-        let response = JSON.parse(this.responseText);
-        console.log(response);
+        var response = JSON.parse(this.responseText);
 
-        document.getElementById('downvote').innerHTML = response.vote;
+        document.getElementById('downvote'+postID).innerHTML = response.vote;
 
     }
 }
 
 document.getElementById("downvotes").addEventListener("click", function () {
 
-    let vote = document.getElementById('downvote').innerText;
+    var vote = document.getElementById('downvote'+postID).innerText;
 
     downvotesRequest.open('POST', '../actions/apiUpdateDownvotes.php', true);
     downvotesRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

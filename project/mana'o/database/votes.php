@@ -4,7 +4,7 @@
     {
         global $dbh;
         try {
-            $stmt = $dbh->prepare('DELETE UpPost from UpPost Where User_ID = ? AND Post_ID = ?');
+            $stmt = $dbh->prepare('DELETE from UpPost Where User_ID = ? AND Post_ID = ?');
             if($stmt->execute(array($userID, $postID)))
                 return true;
             else{
@@ -19,7 +19,7 @@
     {
         global $dbh;
         try {
-            $stmt = $dbh->prepare('DELETE DownPost from DownPost Where User_ID = ? AND Post_ID = ?');
+            $stmt = $dbh->prepare('DELETE from DownPost Where User_ID = ? AND Post_ID = ?');
             if($stmt->execute(array($userID, $postID)))
                 return true;
             else{

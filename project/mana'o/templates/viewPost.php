@@ -45,13 +45,13 @@ include_once ("header.php");
 					</article>
 					<footer>
 						<div id="upvotes">
-							<p id="upvote">
+							<p id="upvote<?=$_GET['id']?>">
 								<?=$post['Upvotes']?>
 							</p>
 							<img src="../images/upvote.png"alt="Upvote">
 						</div>
 						<div id="downvotes">
-							<p id="downvote">
+							<p id="downvote<?=$_GET['id']?>">
 								<?=$post['Downvotes']?>
 							</p>
 							<img src="../images/downvote.png"alt="Downvote">
