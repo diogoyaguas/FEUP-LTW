@@ -116,12 +116,12 @@
 }
 
 /* HOMEPAGE - 5 MOST RECENT POSTS VIEWING */
+.home > #friendsPosts {width: auto; margin: 2em auto;}
 .home > #friendsPosts > article#posts {
     margin-top:30px;
     text-align: left;
-    width: 100%;
+
     margin: 0;
-    padding: 0;
     
     font-family:'Roboto', sans-serif;
     color: #2a2f33;;
@@ -138,17 +138,16 @@
 
     margin-left: 2em;
     margin-bottom: 10px;
-    padding:0;
 
 }
 .home > #friendsPosts > article#posts > header > .author, .home > #friendsPosts > article#posts > header > .date {
     margin-left: 5px;
 }
 
-.home > #friendsPosts > article#posts > p#text_wrote{
+.home > #friendsPosts > article#posts  p#text_wrote{
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
+    overflow: hidden !important;
     width: 550px;  
     
     margin: 10px 20px;
@@ -166,6 +165,7 @@
     transition: color 1.5s;
     margin: auto 35px;
     height: auto;
+    width: auto;
 }
 .home > #friendsPosts > article#posts > a#title:hover{
     text-decoration: none;
