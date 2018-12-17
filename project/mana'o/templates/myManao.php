@@ -25,25 +25,22 @@
                 ?>" alt="Profile picture">
                 <p id="bio">
                     <?php
-                    include_once('../includes/init.php');
-                    include_once('../database/user.php');
                     echo getBio($_SESSION['userID']);
                 ?>
                 </p>
                 <h1 id="name">
                 <?php
-                    include_once('../includes/init.php');
-                    include_once('../database/user.php');
                     echo getName($_SESSION['userID']);
                 ?>
             </h1>
                 <h3 id="username">
                 <?php
-                    include_once('../includes/init.php');
-                    include_once('../database/user.php');
                     echo getUsernameByID($_SESSION['userID']);
                 ?>
             </h3>
+            <form action="../actions/editProfileAction.php">
+                <input type="submit" value="Edit profile">
+            </form>
             </div>
         </section>
     </body>

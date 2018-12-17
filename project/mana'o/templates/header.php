@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <label class="homeButton" type="submit_home" value="" onclick="window.location='home.php';"></label>
+        <label class="homeButton" type="submit_home" value="" onclick="window.location='../templates/home.php';"></label>
         <h3>M A N A ' O</h3>
         <nav id="menu">
             <ol>
