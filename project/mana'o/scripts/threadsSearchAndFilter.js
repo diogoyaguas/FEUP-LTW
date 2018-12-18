@@ -1,6 +1,15 @@
 function dropFilters() {
     document.getElementById("filters").classList.toggle("show");
   }
+
+function searchCategorie() {
+
+    let value = document.getElementById("searchID").value;
+  
+    let search = window.location.search;
+    let part = search.substr(0, search.lastIndexOf('=') + 1);
+    window.location.search = part + value.toUpperCase();
+}
   
   // Close the dropdown menu if the user clicks outside of it
   window.onclick = function(event) {

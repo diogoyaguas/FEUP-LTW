@@ -17,17 +17,22 @@
 
     <body>
 
+    <div class="search-container">
+      <input id="searchID" type="text" placeholder="Search.." name="search">
+      <button type="submit" onclick="searchCategorie()"></button>
+    </div>
+
         <div class="sorting">
             <button onclick="dropFilters()" class="filterButton">Filters</button>
             <div id="filters" class="dropdown-filters">
-                    <a href="?filter=Recent">Most Recent</a>
-                    <a href="?filter=Oldest">Least Recent</a>
-                    <a href="?filter=VotedUp">Most Voted Up</a>
-                    <a href="?filter=VoteDown">Most Voted Down</a>
+                    <a href="?filter=Recent&categorie=<?=$_GET['categorie']?>">Most Recent</a>
+                    <a href="?filter=Oldest&categorie=<?=$_GET['categorie']?>">Least Recent</a>
+                    <a href="?filter=VotedUp&categorie=<?=$_GET['categorie']?>">Most Voted Up</a>
+                    <a href="?filter=VoteDown&categorie=<?=$_GET['categorie']?>">Most Voted Down</a>
             </div>
         </div>
 
-        <script src="../scripts/filterDropdown.js"></script>
+        <script src="../scripts/threadsSearchAndFilter.js"></script>
 
         <style>
             .filterButton {
@@ -66,35 +71,63 @@
             .show {display: block;}
         </style>
 
-
-
         <?php
             include_once ("../includes/init.php");
 			include_once ("../database/post.php");
             include_once ("../actions/verifyAndConvertText.php"); 
 
             $filter = $_GET['filter'];
+            $categorie = $_GET['categorie'];
 
-            switch($filter) {
+            if($categorie == "All") {
 
-                case "Recent": 
-                    $posts = getRecentPosts();
-                    break;
-                case "Oldest":
-                    $posts = getOldestPosts();
-                    break;
-                case "VotedUp":
-                    $posts = getVotedUpPosts();
-                    break;
-                case "VoteDown":
-                    $posts = getVotedDownPosts();
-                    break;
+                switch($filter) {
+
+                    case "Recent": 
+                        $posts = getRecentPosts();
+                        break;
+                    case "Oldest":
+                        $posts = getOldestPosts();
+                        break;
+                    case "VotedUp":
+                        $posts = getVotedUpPosts();
+                        break;
+                    case "VoteDown":
+                        $posts = getVotedDownPosts();
+                        break;
+                }
+
+            } else {
+
+                switch($filter) {
+
+                    case "Recent": 
+                        $posts = getRecentPostsByCategorie($categorie);
+                        break;
+                    case "Oldest":
+                        $posts = getOldestPostsByCategorie($categorie);
+                        break;
+                    case "VotedUp":
+                        $posts = getVotedUpPostsByCategorie($categorie);
+                        break;
+                    case "VoteDown":
+                        $posts = getVotedDownPostsByCategorie($categorie);
+                        break;
+                }
             }
+
+            if($posts == -1) {
+                ?>
+                    <h1>Sorry! We could not find posts within this category</h1>
+                <?php
+            } else {
             
             foreach($posts as $post) {
                 viewPosts($post);
                 unset($post);
                 }
+            
+            }
             
 
             function viewPosts($post) {

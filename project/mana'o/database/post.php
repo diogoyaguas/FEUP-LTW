@@ -104,12 +104,42 @@
 		}
 	}
 
+	function getRecentPostsByCategorie($categorie) 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post, Categories WHERE Categorie = ? and Categories.Post_ID = Post.ID ORDER BY Date DESC');
+			if($stmt->execute(array($categorie)))
+				return $stmt->fetchAll();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
 	function getOldestPosts() 
 	{
 		global $dbh;
 		try {
 			$stmt = $dbh->prepare('SELECT * from Post ORDER BY Date ASC');
 			if($stmt->execute())
+				return $stmt->fetchAll();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
+	function getOldestPostsByCategorie($categorie) 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post, Categories WHERE Categorie = ? and Categories.Post_ID = Post.ID ORDER BY Date ASC');
+			if($stmt->execute(array($categorie)))
 				return $stmt->fetchAll();
 			else
 				return -1;
@@ -134,12 +164,42 @@
 		}
 	}
 
+	function getVotedUpPostsByCategorie($categorie) 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post, Categories WHERE Categorie = ? and Categories.Post_ID = Post.ID  ORDER BY Upvotes DESC');
+			if($stmt->execute(array($categorie)))
+				return $stmt->fetchAll();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
 	function getVotedDownPosts() 
 	{
 		global $dbh;
 		try {
 			$stmt = $dbh->prepare('SELECT * from Post ORDER BY Downvotes DESC');
 			if($stmt->execute())
+				return $stmt->fetchAll();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
+	function getVotedDownPostsByCategorie($categorie) 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post, Categories WHERE Categorie = ? and Categories.Post_ID = Post.ID  ORDER BY Upvotes ASC');
+			if($stmt->execute(array($categorie)))
 				return $stmt->fetchAll();
 			else
 				return -1;
