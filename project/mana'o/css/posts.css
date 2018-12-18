@@ -295,6 +295,7 @@
 
 }
 .viewPost > div#comment_section > label#comment_to_post { display: inline-flex; position: static; }
+.viewPost > div#comment_section > label#comment_to_post > textarea { margin-left: 1em; background-color: rgb(247, 226, 230); }
 .viewPost > div#comment_section > label#user_to_post, .viewPost > div#comment_section > label#user_to_post{ font-style: italic; }
 .viewPost > div#comment_section > label#user_to_post, .viewPost > div#comment_section > label#comment_to_post > textarea {
     font-style: italic;
