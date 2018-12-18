@@ -30,7 +30,7 @@ include_once ("header.php");
 							<span class="author">
 								<?php echo getName($post['User_ID']) ?>
 							</span>
-							<span class="date">
+							<span class="date">|
 								<?=$post['Date'] ?>
 							</span>
 						</header>
@@ -81,9 +81,6 @@ include_once ("header.php");
 						<textarea rows="5" cols="80" placeholder="Insert Text or Image(Optional)" id="newCommentText" name="text" wrap="hard"></textarea>
 					</label>
 					<input id="replyButton" type="submit" value="Reply">
-					<form action="javascript:history.go(-1)" method="post">
-                    	<input type="submit" value="BACK">
-            		</form>
 				</div>
 			</section>
 			<p id="errors">
