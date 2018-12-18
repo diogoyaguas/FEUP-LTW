@@ -19,7 +19,7 @@
 
     <div class="search-container">
       <input id="searchID" type="text" placeholder="Search.." name="search">
-      <button type="submit" onclick="searchCategorie()"></button>
+      <button type="submit" onclick="searchCategorie()">Go!</button>
     </div>
 
         <div class="sorting">
@@ -36,12 +36,15 @@
 
         <style>
             .filterButton {
+            font-family: 'Roboto', sans-serif;
             background-color: #D35763;
-            color: black;
+            color: white;
             padding: 16px;
             font-size: 16px;
-            border: none;
             cursor: pointer;
+            margin-left: 5em;
+            border-radius: 1em;
+            border-width: .1em;
             }
 
             .sorting {
@@ -50,6 +53,8 @@
             }
 
             .dropdown-filters {
+            font-family: 'Roboto', sans-serif;
+            margin-left: 3em;
             display: none;
             position: absolute;
             background-color: #F5EBED;
@@ -66,11 +71,12 @@
             display: block;
             }
 
-            .sorting a:hover {background-color: #DF7175;}
+            .sorting a:hover {background-color: #DF7175; color: white;}
 
             .show {display: block;}
         </style>
 
+        <section id="threadposts">
         <?php
             include_once ("../includes/init.php");
 			include_once ("../database/post.php");
@@ -142,7 +148,7 @@
                     </span>
                 </header>
                 <a id="title" href="viewPost.php?id=<?=$post['ID']?>" target="_blank"><?= $post['Title'] ?></a>
-                <pre id="text_wrote"><?php convertText($post['Text']) ?></pre>
+                <p id="text_wrote"><?php convertText($post['Text']) ?></p>
                 <footer id="votes">
                     <div id="upvotes" onclick="updateUpvotes(<?=$post['ID']?>)">
                         <p id="upvote<?=$post['ID']?>"><?=$post['Upvotes']?></p>
@@ -158,6 +164,8 @@
             <script src="../scripts/updateUpVotes.js"></script>
 
         <?php }?>
+        </section>
+
 
     </body>
 

@@ -114,7 +114,13 @@
 
 /* HOMEPAGE - 5 MOST RECENT POSTS VIEWING */
 .home > #friendsPosts {width: auto; margin: 2em 2em;}
-.home > #friendsPosts > article#posts {
+
+section#threadposts {
+    width: 70%;
+    margin:auto;
+}
+
+.home > #friendsPosts > article#posts, section#threadposts > article#posts {
     margin-top:30px;
     text-align: left;
 
@@ -128,7 +134,7 @@
     background-color: rgb(247, 216, 216);
 }
 
-.home > #friendsPosts > article#posts > header{
+.home > #friendsPosts > article#posts > header, section#threadposts > article#posts > header{
     background-color: rgb(255, 167, 159);
     color: white;
     font-size: 17px;
@@ -137,11 +143,13 @@
     margin-bottom: 10px;
 
 }
-.home > #friendsPosts > article#posts > header > .author, .home > #friendsPosts > article#posts > header > .date {
+
+.home > #friendsPosts > article#posts > header > .author, .home > #friendsPosts > article#posts > header > .date,
+section#threadposts > article#posts > header > .author, section#threadposts > article#posts > header > .date {
     margin-left: 5px;
 }
 
-.home > #friendsPosts > article#posts  p#text_wrote{
+.home > #friendsPosts > article#posts  p#text_wrote {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden !important;
@@ -150,7 +158,15 @@
     margin: 10px 20px;
 }
 
-.home > #friendsPosts > article#posts > a#title{
+section#threadposts > article#posts > p#text_wrote {
+    white-space: pre;
+    font-family:'Roboto', sans-serif;
+    margin: 1em;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+}
+
+.home > #friendsPosts > article#posts > a#title, section#threadposts > article#posts > a#title{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden !important;
@@ -169,16 +185,18 @@
     height: auto;
     width: auto;
 }
-.home > #friendsPosts > article#posts > a#title:hover{
+
+.home > #friendsPosts > article#posts > a#title:hover, section#threadposts > article#posts > a#title:hover{
     text-decoration: none;
     color: white;
 }
 
-.home > #friendsPosts{
+.home > #friendsPosts, section#threadposts{
     border-radius: 3px 3px;
     border: 3px solid var(--color_manao2);
     background-color: var(--color_manao2);
 }
+
 .home > #friendsPosts > h3 {
     font-family:'Julius Sans One', sans-serif;
     font-size: 20px;
@@ -190,8 +208,9 @@
 
 .home > #friendsPosts > article#posts > footer#votes > div#upvotes > p, .home > #friendsPosts > article#posts > footer#votes > div#downvotes > p{
     text-align: center;
-    margin: 0
+    margin: 0;
 }
+
 .home > #friendsPosts > article#posts > footer#votes > div#upvotes > img, .home > #friendsPosts > article#posts > footer#votes > div#downvotes > img{
     margin-bottom: 25px;
 }
@@ -245,7 +264,7 @@
     border: 2px solid white;
     resize: none;
 }
-.viewPost > div#post > footer#votes{
+.viewPost > div#post > footer#votes, section#threadposts > article#posts > footer#votes{
     grid-area: votes;
     
     display: flex;
@@ -258,7 +277,8 @@
     width: auto;
     height: auto;
 } 
-.viewPost > div#post > footer#votes > div#upvotes > p, .viewPost > div#post > footer#votes > div#downvotes > p{
+.viewPost > div#post > footer#votes > div#upvotes > p, .viewPost > div#post > footer#votes > div#downvotes > p,
+section#threadposts > article#posts > footer#votes p{
     text-align: center;
     margin: 0;
 }
