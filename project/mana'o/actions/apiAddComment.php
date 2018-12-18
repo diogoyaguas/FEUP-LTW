@@ -9,7 +9,7 @@
   if(($comment = getCommentById($commentID)) != -1) {
 
     $comment = getCommentById($commentID);
-    echo json_encode($comment);
+    echo json_encode($comment, JSON_UNESCAPED_UNICODE);
 
   } else header("Location:".$_SERVER['HTTP_REFERER']."");
   
