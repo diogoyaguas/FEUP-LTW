@@ -231,5 +231,43 @@ section #about {
   .show {display:block;}
 
 
-
-  
+  /* MY PROFILE */
+  .profile > div#information{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "image button statistics"
+                         "image name statistics"
+                         "image username posts"
+                         "image bio posts";
+                         
+    width: 100%;
+    height: 100%;
+}
+.profile > div#information  img#pic{ grid-area: image;
+    justify-self: center;
+    align-self: center; }
+.profile > div#information > p#bio{ grid-area: bio;
+    justify-self: left;
+    position: relative;
+    bottom: 60px;
+ }
+.profile > div#information > h1#name{ grid-area: name;
+    justify-self: left;
+    position: relative;
+    top: 20px;
+}
+.profile > div#information > h3#username{
+    grid-area: username;
+    justify-self: left;
+    position: relative;
+    bottom: 60px;
+}
+.profile > div#information > div#statistics{ grid-area: statistics;}
+.profile > div#information > div#userPosts{ grid-area: posts;}
+.profile > div#information > form > input{ grid-area: button;}
+.profile > div#information  img#pic, .profile > div#information > p#bio,
+.profile > div#information > h1#name, .profile > div#information > h3#username,
+.profile > div#information > div#statistics, .profile > div#information > div#userPosts{
+    width: auto; height: auto;
+}
