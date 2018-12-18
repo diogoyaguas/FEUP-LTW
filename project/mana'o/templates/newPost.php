@@ -23,7 +23,7 @@ include_once("header.php");
                 </div>
                 <div>
                     <input id="categories" type="submitincate" placeholder="Categories" maxlength="15">
-                    <input id="array" type="hidden" name="Insert Categories">
+                    <input id="array" type="hidden" name="InsertCategories">
                     <button id="add" onclick='addRecord()'  style="display: none;" >Button</button>
                     <label id='values' onclick='clearLabel()'></label>
                     <script src="../scripts/addCategories.js"></script>

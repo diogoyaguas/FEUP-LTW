@@ -11,7 +11,6 @@ values = [];
 function addRecord() {
   var inp = document.getElementById('categories');
   text = inp.value.replace(/^\s+/, '').replace(/\s+$/, '');
-  console.log(values);
   if (text !== '') {
     
     values.push(inp.value.toUpperCase());
@@ -23,6 +22,7 @@ function addRecord() {
 function displayRecord() {
   document.getElementById("values").innerHTML = values.join(" | ");
   document.getElementById("array").value = JSON.stringify(values);
+  console.log(document.getElementById("array"));
   if(values.length == 5) document.getElementById("categories").setAttribute("readonly", "true");
 }
 
