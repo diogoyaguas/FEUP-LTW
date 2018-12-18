@@ -211,10 +211,15 @@ section #about {
     font-family: 'Julius Sans One', sans-serif;
     color: var(--color_text);
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 0px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    
+    -webkit-transition: width 0.6s;
+    transition: width 0.6s ease;
   }
+
+
   
   /* Links inside the dropdown */
   .dropdown-content a {
@@ -226,12 +231,19 @@ section #about {
   
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: #ddd}
+
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;}
+  .show {
+      display:block;
+    
+      -webkit-transition: width 0.6s;
+      transition: width 0.6s ease;
+      min-width: 160px;
+    }
 
 
-  /* MY PROFILE */
+  /* MY PROFILE - MY MANAO */
   .profile > div#information{
     display: grid;
     grid-template-rows: auto;
@@ -271,3 +283,72 @@ section #about {
 .profile > div#information > div#statistics, .profile > div#information > div#userPosts{
     width: auto; height: auto;
 }
+/*EDIT PROFILE - MY MANAO*/
+.EditPage > .content > div#account{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "image_field personal_field";
+    width: 100%;
+    height: 100%;
+}
+.EditPage > .content > div#account > div#fields{
+    grid-area: personal_field;
+}
+.EditPage > .content > div#account > div#fields > form.register_form{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "name name_input"
+                        "username username_input"
+                        "email email_input"
+                        "password currpassword"
+                        "newpassword newpassword_again"
+                        "bio bio_input"
+                        "posted posted";
+    width: 100%;
+    height: 100%;
+
+}
+.EditPage > .content > div#account > div#photo_field{
+    grid-area: image_field;
+    margin: 0;
+}
+
+.EditPage > .content > div#account > div#fields > form.register_form > label#Name{ grid-area: name; }
+.EditPage > .content > div#account > div#fields > form.register_form > label#Username{ grid-area: username; }
+.EditPage > .content > div#account > div#fields > form.register_form > label#Email{ grid-area: email; }
+.EditPage > .content > div#account > div#fields > form.register_form > label#Password{ grid-area: password; }
+.EditPage > .content > div#account > div#fields > form.register_form > label#Bio{ grid-area: bio; }
+.EditPage > .content > div#account > div#fields > form.register_form  input[name="name"]{ grid-area: name_input; }
+.EditPage > .content > div#account > div#fields > form.register_form  input[name="username"]{ grid-area: username_input; }
+.EditPage > .content > div#account > div#fields > form.register_form  input[name="email"]{ grid-area: email_input; }
+.EditPage > .content > div#account > div#fields > form.register_form  input[name="currpassword"]{ grid-area: currpassword; }
+.EditPage > .content > div#account > div#fields > form.register_form  input[name="password"]{ grid-area: newpassword; }
+.EditPage > .content > div#account > div#fields > form.register_form  input[name="passwordagain"]{ grid-area: newpassword_again; }
+.EditPage > .content > div#account > div#fields > form.register_form  input[name="Submit"]{ grid-area: posted; }
+.EditPage > .content > div#account > div#fields > form.register_form  textarea{ resize:none; grid-area: bio_input; }
+
+.EditPage > .content > div#account > div#photo_field  form label,
+.EditPage > .content > div#account > div#photo_field  form input{
+    margin: auto auto;
+}
+
+.EditPage > .content > div#account > div#photo_field > form#image_form{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "photo photo"
+                        "file submit_picture";
+    width: 100%;
+    height: 100%;
+
+}
+.EditPage > .content > div#account > div#photo_field{
+    grid-area: image_field;
+    margin: 0;
+}
+
+.EditPage > .content > div#account > div#photo_field > img#photo{ grid-area: photo;}
+.EditPage > .content > div#account > div#photo_field > form#image_form > input[type="file"]{ grid-area: file; width:auto;}
+.EditPage > .content > div#account > div#photo_field > form#image_form > input[name="Submit"]{ grid-area: submit_picture; }

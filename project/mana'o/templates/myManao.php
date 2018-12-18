@@ -41,7 +41,7 @@
             </h3>
             <div id="statistics">
                 <h3 id=title>
-                    User Statistics
+                    USER STATISTICS & POSTS
                 </h3>
                 <p id="posts"><?php echo getNumberofPostOfUser($_SESSION['userID']) ?> posts</p>
                 <p id="comments"><?php echo getNumberofCommentsOfUser($_SESSION['userID'])?> comments</p>
