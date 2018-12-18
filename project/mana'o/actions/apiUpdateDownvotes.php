@@ -9,7 +9,7 @@
 
         deleteDownVoteFromPost($_SESSION['userID'], $_POST['postID']);
         updateDownvotes($newVote, $_POST['postID']);
-        echo json_encode(["vote" => $newVote]);
+        echo json_encode(["vote" => $newVote, "postID" => $_POST['postID']]);
 
   } else if((!getUserUpVoteOnPost($_SESSION['userID'], $_POST['postID'])) && (!getUserDownVoteOnPost($_SESSION['userID'], $_POST['postID']))) {
 
@@ -17,11 +17,11 @@
 
         addDownVoteFromPost($_SESSION['userID'], $_POST['postID']);
         updateDownvotes($newVote, $_POST['postID']);
-        echo json_encode(["vote" => $newVote]);
+        echo json_encode(["vote" => $newVote, "postID" => $_POST['postID']]);
 
   } else {
 
-        echo json_encode(["vote" => $_POST['vote']]);
+        echo json_encode(["vote" => $_POST['vote'], "postID" => $_POST['postID']]);
   }
   
 ?>

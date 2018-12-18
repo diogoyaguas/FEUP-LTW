@@ -44,13 +44,13 @@ include_once ("header.php");
 						</div>
 					</article>
 					<footer>
-						<div id="upvotes">
+						<div id="upvotes" onclick="updateUpvotes(<?=$_GET['id']?>)">
 							<p id="upvote<?=$_GET['id']?>">
 								<?=$post['Upvotes']?>
 							</p>
 							<img src="../images/upvote.png"alt="Upvote">
 						</div>
-						<div id="downvotes">
+						<div id="downvotes" onclick="updateDownvotes(<?=$_GET['id']?>)">
 							<p id="downvote<?=$_GET['id']?>">
 								<?=$post['Downvotes']?>
 							</p>
@@ -89,7 +89,6 @@ include_once ("header.php");
 				<?php if (isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR']) ?>
 			</p>
 
-			<script type="text/javascript">let postID = "<?php echo $_GET['id'] ?>"; </script>
 			<script src="../scripts/addComment.js"></script>
 			<script src="../scripts/updateDownVotes.js"></script>
 			<script src="../scripts/updateUpVotes.js"></script>
