@@ -25,18 +25,17 @@
                 <?= $post['Text'] ?>
             </p>
             <footer id="votes">
-                <div id="upvotes">
+                <div id="upvotes" onclick="updateUpvotes(<?=$post['ID']?>)">
                     <p id="upvote<?=$post['ID']?>"><?=$post['Upvotes']?></p>
 					<img src="../images/upvote.png"alt="Upvote">
                 </div>
-                <div id="downvotes">
+                <div id="downvotes" onclick="updateDownvotes(<?=$post['ID']?>)">
                     <p id="downvote<?=$post['ID']?>"><?=$post['Downvotes']?></p>
 					<img src="../images/downvote.png"alt="Downvote">
                 </div>
             </footer>
         </article>
 
-        <script type="text/javascript">var postID = "<?php echo $post['ID'] ?>"; </script>
         <script src="../scripts/updateDownVotes.js"></script>
         <script src="../scripts/updateUpVotes.js"></script>
        <?php }?>

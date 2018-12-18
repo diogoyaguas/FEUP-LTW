@@ -38,6 +38,17 @@
                     echo getUsernameByID($_SESSION['userID']);
                 ?>
             </h3>
+            <div id="statistics">
+                <h3 id=title>
+                    User Statistics
+                </h3>
+                <p id="posts"><?php echo getNumberofPostOfUser($_SESSION['userID']) ?> posts</p>
+                <p id="comments"><?php echo getNumberofCommentsOfUser($_SESSION['userID'])?> comments</p>
+                <p id="pontuation"><?php echo getPontuationOfUser($_SESSION['userID'])?> points</p>
+            </div>
+            <div id="userPosts">
+                <?php include("userPosts.php"); ?>
+            </div>
             <form action="../actions/editProfileAction.php">
                 <input type="submit" value="Edit profile">
             </form>

@@ -119,6 +119,21 @@
 		}
 	}
 
+	function getUserPosts($userID)
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post WHERE User_ID = ? ORDER BY Date DESC LIMIT 5');
+			if($stmt->execute(array($userID)))
+				return $stmt->fetchAll();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
 	function getPostComments($postID) 
 	{
 		global $dbh;

@@ -198,4 +198,44 @@
         return true;
       }
     }
+
+    function getNumberofPostOfUser($userID) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT count(*) FROM Post WHERE User_ID = ?');
+        $stmt->execute(array($userID));
+        return ($stmt->fetch()["count(*)"]);
+      
+      }catch(PDOException $e) {
+        return true;
+      }
+    }
+
+    function getNumberofCommentsOfUser($userID) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT count(*) FROM Comments WHERE User_ID = ?');
+        $stmt->execute(array($userID));
+        return ($stmt->fetch()["count(*)"]);
+      
+      }catch(PDOException $e) {
+        return true;
+      }
+    }
+
+    function getPontuationOfUser($userID) {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT count(DownPost.Post_ID) from DownPost, User, Post WHERE DownPost.Post_ID = Post.ID and User.ID = Post.User_ID  and User.ID = ?');
+        $stmt->execute(array($userID));
+        $negative = ($stmt->fetch()["count(DownPost.Post_ID)"]);
+        $stmt = $dbh->prepare('SELECT count(UpPost.Post_ID) from UpPost, User, Post WHERE UpPost.Post_ID = Post.ID and User.ID = Post.User_ID  and User.ID = ?');
+        $stmt->execute(array($userID));
+        $positive = ($stmt->fetch()["count(UpPost.Post_ID)"]);
+        return ($positive - $negative);
+      
+      }catch(PDOException $e) {
+        return true;
+      }
+    }
 ?>
