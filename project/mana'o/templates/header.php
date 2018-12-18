@@ -17,7 +17,7 @@
             <ol>
                 <li><a href="home.php">Home</a></li>
                 <li><a href="http://www.pixelthoughts.co/#">Safe Haven</a></li>
-                <li><a href="threads.php">Threads</a></li>
+                <li><a href="threads.php?filter=Recent">Threads</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contacts.php">Contacts</a></li>
             </ol>

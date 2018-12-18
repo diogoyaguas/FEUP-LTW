@@ -78,7 +78,7 @@ include_once ("header.php");
 				</div>
 				<div id="comment_section">
 					<label id="user_to_post"><?=$_SESSION['username']?></label><label id="comment_to_post">'s comment
-						<textarea rows="5" cols="80" placeholder="Insert Text or Image(Optional)" id="newCommentText" name="text" wrap="hard"></textarea>
+						<textarea rows="5" cols="80" placeholder="Insert Text" id="newCommentText" name="text" wrap="hard"></textarea>
 					</label>
 					<input id="replyButton" type="submit" value="Reply">
 				</div>

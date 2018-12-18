@@ -89,11 +89,56 @@
 		}
 	}
 
-	function getAllPosts() 
+	function getRecentPosts() 
 	{
 		global $dbh;
 		try {
 			$stmt = $dbh->prepare('SELECT * from Post ORDER BY Date DESC');
+			if($stmt->execute())
+				return $stmt->fetchAll();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
+	function getOldestPosts() 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post ORDER BY Date ASC');
+			if($stmt->execute())
+				return $stmt->fetchAll();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
+	function getVotedUpPosts() 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post ORDER BY Upvotes DESC');
+			if($stmt->execute())
+				return $stmt->fetchAll();
+			else
+				return -1;
+
+		} catch(PDOException $e) {
+			return -1;
+		}
+	}
+
+	function getVotedDownPosts() 
+	{
+		global $dbh;
+		try {
+			$stmt = $dbh->prepare('SELECT * from Post ORDER BY Downvotes DESC');
 			if($stmt->execute())
 				return $stmt->fetchAll();
 			else

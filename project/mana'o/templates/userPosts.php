@@ -22,7 +22,7 @@
                     </span>
                 </header>
                 <a id="title" href="viewPost.php?id=<?=$post['ID']?>" target="_blank"><?= $post['Title'] ?></a>
-                <pre id="text_wrote"><?= $post['Text'] ?></pre>
+                <pre id="text_wrote"><?php convertText($post['Text']) ?></pre>
                 <footer id="votes">
                     <div id="upvotes" onclick="updateUpvotes(<?=$post['ID']?>)">
                         <p id="upvote<?=$post['ID']?>"><?=$post['Upvotes']?></p>

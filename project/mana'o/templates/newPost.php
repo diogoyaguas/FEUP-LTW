@@ -29,7 +29,7 @@ include_once("header.php");
                     <script src="../scripts/addCategories.js"></script>
                 </div>
                 <div>
-                    <textarea rows="9" cols="30" placeholder="Insert Text or Image(Optional)" name="Post" wrap="hard" required></textarea>
+                    <textarea rows="9" cols="30" placeholder="Insert Text" name="Post" wrap="hard" required></textarea>
                 </div>
                 <div>
                     <input type="submit" value="Post" onClick='validateForm()'>

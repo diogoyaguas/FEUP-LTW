@@ -1,6 +1,7 @@
 <?php
     include_once('../includes/init.php');
     include_once("../database/post.php");
+    include_once("../actions/verifyAndConvertText.php"); 
             function viewAllPosts() {
                 $posts = getFiveMostRecentPosts();
             foreach($posts as $post) {
@@ -22,7 +23,7 @@
             </header>
             <a id="title" href="viewPost.php?id=<?=$post['ID']?>" target="_blank"><?= $post['Title'] ?></a>
             <p id="text_wrote">
-                <?= $post['Text'] ?>
+                <?php convertText($post['Text']) ?>
             </p>
             <footer id="votes">
                 <div id="upvotes" onclick="updateUpvotes(<?=$post['ID']?>)">
