@@ -49,7 +49,7 @@
             <div id="userPosts">
                 <?php include("userPosts.php"); ?>
             </div>
-            <form action="../actions/editProfileAction.php">
+            <form action="editProfile.php">
                 <input type="submit" value="Edit profile">
             </form>
             </div>

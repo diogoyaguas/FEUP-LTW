@@ -17,7 +17,7 @@
             <ol>
                 <li><a href="home.php">Home</a></li>
                 <li><a href="http://www.pixelthoughts.co/#">Safe Haven</a></li>
-                <li><a href="#threads">Threads</a></li>
+                <li><a href="threads.php">Threads</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contacts.php">Contacts</a></li>
             </ol>
@@ -31,7 +31,6 @@
                 <div id="myDropdown" class="dropdown-content">
                     <a href="myManao.php">My Mana'o</a>
                     <a href="newPost.php">New Post</a>
-                    <a href="#">Channels</a>
                     <a href="../actions/logoutAction.php">Log out</a>
                 </div>
             </div>

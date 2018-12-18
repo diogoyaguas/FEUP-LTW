@@ -93,6 +93,21 @@
       }
     }
 
+    function getEmail($userID) 
+    {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('SELECT Email FROM User WHERE ID = ?');
+        $stmt->execute(array($userID));
+        if($row = $stmt->fetch()){
+          return $row['Email'];
+        }
+      
+      }catch(PDOException $e) {
+        return -1;
+      }
+    }
+
     function getUserPhoto($userID) {
       global $dbh;
       try {
