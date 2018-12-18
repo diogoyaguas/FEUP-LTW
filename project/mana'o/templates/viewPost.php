@@ -87,6 +87,7 @@ include_once ("header.php");
 				<?php if (isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR']) ?>
 			</p>
 
+			<script> let postID = <?=$_GET['id']?> </script> 
 			<script src="../scripts/addComment.js"></script>
 			<script src="../scripts/updateDownVotes.js"></script>
 			<script src="../scripts/updateUpVotes.js"></script>

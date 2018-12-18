@@ -20,7 +20,7 @@
     <div class="content">
         <div id="account">
             <div id="fields">
-                <form action="../actions/action_update_user.php" method="post" class="register_form">
+                <form action="../actions/updateUserAction.php" method="post" class="register_form">
                     <label>Name</label>
                     <input name="name" class="editInput" type="text" placeholder="Name" value="<?php echo htmlentities(getName($_SESSION['userID'])) ?>" required="required">
                     <label>Username</label>
@@ -30,17 +30,19 @@
                     <label>Password</label>
                     <input name="currpassword" class="editInput" type="password" placeholder="Password" required="required">
                     <h5> Optional </h5>
+                    <label>Bio</label>
+                    <textarea name="bio" rows="5" cols="50" placeholder="Insert New Bio" id="newCommentText" name="text" wrap="hard"></textarea>
                     <input name="password" class="editInput" type="password" placeholder="New Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
                     <input name="passwordagain" class="editInput" type="password" placeholder="Repeat New Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
-                    <span class="hint">Must match new password</span>
                     <input type="submit" name="Submit" value="Update">
                 </form>
-                <hr>
-                <input onclick="openDialog('Delete Account')" type="submit" value="Delete Account">
+                <p id="errors">
+                    <?php if(isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR'])?>
+                </p>
 
             </div>
             <div id="photo_field">
-                <form action="../actions/api_upload_photo.php" method="post" enctype="multipart/form-data">
+                <form action="../actions/apiUploadPhoto.php" method="post" enctype="multipart/form-data">
                     <label>Photo</label>
                     <img id="photo" src="../profilePictures/<?php echo getUserPhoto($_SESSION['userID']);?>" alt="Profile Picture">
                     <input type="file" name="fileToUpload" id="fileToUpload">
@@ -48,6 +50,7 @@
                 </form>
             </div>
         </div>
+
     </div>
     </body>
 </html>

@@ -5,16 +5,22 @@ request.onreadystatechange = function () {
 
         let response = JSON.parse(this.responseText);
 
+        console.log("FDS");
+
         let article = document.createElement("article");
+        article.setAttribute("id", "posted");
         let p1 = document.createElement("p");
+        p1.setAttribute("id", "name");
         let name = document.createTextNode(response[0].Name);
         p1.appendChild(name);
 
         let div = document.createElement("div");
+        div.setAttribute("id", "commentText");
         let text = document.createTextNode(decodeURIComponent(response[0].Text));
         div.appendChild(text);
 
         let p2 = document.createElement("p");
+        p2.setAttribute("id", "commentDate");
         let date = document.createTextNode(response[0].Date);
         p2.appendChild(date);
 

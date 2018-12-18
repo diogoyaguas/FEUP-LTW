@@ -148,11 +148,11 @@
       }
     }
 
-    function updateUserInfo($userID, $name, $username, $email, $bio){
+    function updateUserInfo($userID, $name, $username, $email){
       global $dbh;
       try {
-        $stmt = $dbh->prepare('UPDATE User SET Name = ?, Username = ?, Email = ? , Bio = ? WHERE ID = ?');
-        if($stmt->execute(array($name, $username, $email, $bio, $userID)))
+        $stmt = $dbh->prepare('UPDATE User SET Name = ?, Username = ?, Email = ? WHERE ID = ?');
+        if($stmt->execute(array($name, $username, $email, $userID)))
             return true;
         else{
           return false;
@@ -162,22 +162,39 @@
       }
     }
 
-    function updateUserPassword($userID, $newpassword){
-    $passwordhashed = hash('sha256', $newpassword);
-    global $dbh;
-    try {
-      $stmt = $dbh->prepare('UPDATE User SET Password = ? WHERE ID = ?');
-      if($stmt->execute(array($passwordhashed, $userID)))
-          return true;
-      else{
+    function updateUserPassword($userID, $newpassword)
+    {
+      $passwordhashed = hash('sha256', $newpassword);
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('UPDATE User SET Password = ? WHERE ID = ?');
+        if($stmt->execute(array($passwordhashed, $userID)))
+            return true;
+        else{
+          return false;
+        }   
+      }catch(PDOException $e) {
         return false;
-      }   
-    }catch(PDOException $e) {
-      return false;
+      }
     }
-  }
 
-    function updateUserPhoto($userID, $photoPath) {
+    function updateBio($userID, $bio)
+    {
+      global $dbh;
+      try {
+        $stmt = $dbh->prepare('UPDATE User SET Bio = ? WHERE ID = ?');
+        if($stmt->execute(array($bio, $userID)))
+            return true;
+        else{
+          return false;
+        }   
+      }catch(PDOException $e) {
+        return false;
+      }
+    }
+
+    function updateUserPhoto($userID, $photoPath) 
+    {
       global $dbh;
       try {
         $stmt = $dbh->prepare('UPDATE User SET Photo = ? WHERE ID = ?');
