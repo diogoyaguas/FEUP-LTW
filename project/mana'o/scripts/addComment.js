@@ -4,9 +4,7 @@ request.onreadystatechange = function () {
     if(this.readyState === 4 && this.status === 200) {
 
         let response = JSON.parse(this.responseText);
-
-        console.log("FDS");
-
+        
         let article = document.createElement("article");
         article.setAttribute("id", "posted");
         let p1 = document.createElement("p");

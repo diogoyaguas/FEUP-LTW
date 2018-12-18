@@ -11,6 +11,7 @@
         <link href="../css/main_layout.css" rel="stylesheet">
         <link href="../css/main_style.css" rel="stylesheet">
         <link href="../css/others.css" rel="stylesheet">
+        <link href="../css/profile.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
     </head>

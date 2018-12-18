@@ -17,7 +17,7 @@
                     <span class="author">
                         <?php echo getName($post['User_ID']) ?>
                     </span> 
-                    <span class="date">
+                    <span class="date">|
                         <?= $post['Date'] ?>
                     </span>
                 </header>

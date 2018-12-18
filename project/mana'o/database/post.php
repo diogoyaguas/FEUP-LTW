@@ -256,4 +256,19 @@
 		}
 	}
 
+	function addCategorieToPost($categorie, $postID)
+    {
+        global $dbh;
+        try {
+            $stmt = $dbh->prepare('INSERT INTO Categories (Categorie, Post_ID) VALUES (?, ?)');
+            if($stmt->execute(array($categorie, $postID)))
+                return true;
+            else{
+                return false;
+                }   
+        } catch(PDOException $e) {
+            return -1;
+        }
+    }
+
 ?>
