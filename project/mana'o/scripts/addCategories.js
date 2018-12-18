@@ -22,7 +22,6 @@ function addRecord() {
 function displayRecord() {
   document.getElementById("values").innerHTML = values.join(" | ");
   document.getElementById("array").value = JSON.stringify(values);
-  console.log(document.getElementById("array"));
   if(values.length == 5) document.getElementById("categories").setAttribute("readonly", "true");
 }
 

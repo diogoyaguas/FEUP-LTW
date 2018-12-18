@@ -29,34 +29,6 @@
 		}
 	}
 
-    function deleteComment($commentID) {
-		global $dbh;
-		try {
-			$stmt = $dbh->prepare('DELETE FROM Comments WHERE ID = ?');
-			if($stmt->execute(array($commentID)))
-				return true;
-			else
-				return false;
-		
-		} catch(PDOException $e) {
-			return false;
-		}
-    }
-    
-    function changeComment($commentID, $newText) {
-		global $dbh;
-		try {
-			$stmt = $dbh->prepare('UPDATE Comments SET Text = ? WHERE ID = ?');
-			if($stmt->execute(array($newText, $commentID)))
-				return true;
-			else
-				return false;
-		
-		} catch(PDOException $e) {
-			return false;
-		}
-	}
-
 	function getCommentById($commentID) {
 		global $dbh;
 		try {

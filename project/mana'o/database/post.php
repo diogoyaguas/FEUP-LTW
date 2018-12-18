@@ -29,51 +29,6 @@
         }
       }
 
-	function deletePost($postID) 
-	{
-		global $dbh;
-		try {
-			$stmt = $dbh->prepare('DELETE FROM Post WHERE ID = ?');
-			if($stmt->execute(array($postID)))
-				return true;
-			else
-				return false;
-
-		} catch(PDOException $e) {
-			return false;
-		}
-    }
-
-	function changeTitlePost($postID, $newTitle) 
-	{
-		global $dbh;
-		try {
-			$stmt = $dbh->prepare('UPDATE Post SET Title = ? WHERE ID = ?');
-			if($stmt->execute(array($newTitle, $postID)))
-				return true;
-			else
-				return false;
-
-		} catch(PDOException $e) {
-			return false;
-		}
-    }
-
-	function changeTextPost($postID, $newText) 
-	{
-		global $dbh;
-		try {
-			$stmt = $dbh->prepare('UPDATE Post SET Text = ? WHERE ID = ?');
-			if($stmt->execute(array($newText, $postID)))
-				return true;
-			else
-				return false;
-
-		} catch(PDOException $e) {
-			return false;
-		}
-	}
-
 	function getPostByID($postID) 
 	{
 		global $dbh;
