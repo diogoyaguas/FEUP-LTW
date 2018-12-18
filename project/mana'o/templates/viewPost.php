@@ -34,23 +34,23 @@ include_once ("header.php");
 								<?=$post['Date'] ?>
 							</span>
 						</header>
-						<div>
+						<div id="Title">
 							<h1>
 								<?=$post['Title'] ?>
 							</h1>
 						</div>
-						<div>
+						<div id="Text">
 							<pre id="text"><?php convertText($post['Text']); ?></pre>
 						</div>
 					</article>
-					<footer>
-						<div id="upvotes" onclick="updateUpvotes(<?=$_GET['id']?>)">
+					<footer id="votes">
+						<div id="upvotes">
 							<p id="upvote<?=$_GET['id']?>">
 								<?=$post['Upvotes']?>
 							</p>
 							<img src="../images/upvote.png"alt="Upvote">
 						</div>
-						<div id="downvotes" onclick="updateDownvotes(<?=$_GET['id']?>)">
+						<div id="downvotes">
 							<p id="downvote<?=$_GET['id']?>">
 								<?=$post['Downvotes']?>
 							</p>
@@ -61,8 +61,7 @@ include_once ("header.php");
 				</div>
 				<div id="comments">
 				<?php  foreach($comments as $comment){ ?>
-					
-						<article>
+					<article id="posted">
 							<p id="name">
 								<?php echo getName($comment['User_ID']) ?>
 							</p>
@@ -74,21 +73,27 @@ include_once ("header.php");
 							<p id="commentDate">
 								<?=$comment['Date'] ?>
 							</p>
-						</article>
+					</article>
 				<?php unset($comment); } ?>
 				</div>
-					<label>
-						<?=$_SESSION['username']?>
+				<div id="comment_section">
+					<label id="user_to_post">
+							<?=$_SESSION['username']?>
 					</label>
-					<label>Comment
-						<textarea id="newCommentText" name="text" wrap="hard"></textarea>
+					<label id="comment_to_post">'s comment
+						<textarea rows="5" cols="80" placeholder="Insert Text or Image(Optional)" id="newCommentText" name="text" wrap="hard"></textarea>
 					</label>
 					<input id="replyButton" type="submit" value="Reply">
+					<form action="javascript:history.go(-1)" method="post">
+                    	<input type="submit" value="BACK">
+            		</form>
+				</div>
 			</section>
 			<p id="errors">
 				<?php if (isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR']) ?>
 			</p>
 
+			<script type="text/javascript">let postID = "<?php echo $_GET['id'] ?>"; </script>
 			<script src="../scripts/addComment.js"></script>
 			<script src="../scripts/updateDownVotes.js"></script>
 			<script src="../scripts/updateUpVotes.js"></script>

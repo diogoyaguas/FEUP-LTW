@@ -19,7 +19,7 @@ include_once("header.php");
         <section class="add_post">
             <form id="post" action="../actions/newPost.php" autocomplete="off" onSubmit="return false" method="post">
                 <div>
-                    <input type="text" placeholder="T I T L E   O F   P O S T" name="Title" required>
+                    <input type="text" placeholder="T I T L E   O F   P O S T" name="Title" maxlength="68" required>
                 </div>
                 <div>
                     <input id="categories" type="submitincate" placeholder="Categories" maxlength="15">
@@ -35,12 +35,20 @@ include_once("header.php");
                     <input type="submit" value="Post" onClick='validateForm()'>
                     <script src="../scripts/validatePost.js"></script>
                 </div>
+
+            </form>
+            <form action="javascript:history.go(-1)" method="post">
+                <div>
+                    <input type="submit" value="BACK">
+                </div>
             </form>
 
             <p id="errors">
         <?php if(isset($_SESSION['ERROR'])) echo htmlentities($_SESSION['ERROR']); unset($_SESSION['ERROR'])?>
     </p>
+    
         </section>
+        
     </body>
 
     </html>

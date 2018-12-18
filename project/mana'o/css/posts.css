@@ -15,12 +15,10 @@
     box-shadow: none;
     text-align: left;
 
-    width: 70%;
+    width: auto;
     display: block;
 
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5em;
+    margin: 3em 3em;
     padding: 2%;
     border-radius: 3px 3px;
 }
@@ -76,7 +74,6 @@
 
     display: inline-block;
     padding: 14px 20px;
-    margin-top: 4em;
     margin-left: 16px;
     border: none;
     border-radius: 5px;
@@ -116,7 +113,7 @@
 }
 
 /* HOMEPAGE - 5 MOST RECENT POSTS VIEWING */
-.home > #friendsPosts {width: auto; margin: 2em auto;}
+.home > #friendsPosts {width: auto; margin: 2em 2em;}
 .home > #friendsPosts > article#posts {
     margin-top:30px;
     text-align: left;
@@ -128,7 +125,7 @@
 
     text-decoration: none;
     outline: none;
-    background-color: rgb(247, 210, 210);
+    background-color: rgb(247, 216, 216);
 }
 
 .home > #friendsPosts > article#posts > header{
@@ -154,6 +151,11 @@
 }
 
 .home > #friendsPosts > article#posts > a#title{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+    width: 100px;  
+
     text-decoration: none;
     color: var(--color_separator);
     
@@ -192,4 +194,125 @@
 }
 .home > #friendsPosts > article#posts > footer#votes > div#upvotes > img, .home > #friendsPosts > article#posts > footer#votes > div#downvotes > img{
     margin-bottom: 25px;
+}
+
+/*FULL POST VIEW */
+.viewPost {
+    background-color: rgb(247, 210, 210);
+    padding: 8px;
+    box-shadow: none;
+    text-align: left;
+
+    width: auto;
+
+    margin: 1em 3em;
+    border-radius: 3px 3px;
+}
+.viewPost > div#post  header
+{
+    margin: 10px 10px;
+    text-align: right;
+    font-size: 1.5em;
+    font-family: 'Julius Sans One', sans-serif;
+}
+.viewPost > div#post  div#Title {
+    background-color: var(--maincolor_bckgrnd);
+    color: black;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: auto 7em;
+    
+    width: auto;
+    border-radius: 3px 3px;
+    border: 2px solid white;
+}
+.viewPost > div#post  div#Title h1 {
+    max-width: auto;
+}
+.viewPost > div#post  div#Text pre#text {
+    background-color: var(--maincolor_bckgrnd);
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    margin: 1em 2em;
+    padding: 10px;
+
+    width: auto;
+    height: 15em;
+
+    overflow-x: scroll;
+    border-radius: 3px 3px;
+    border: 2px solid white;
+    resize: none;
+}
+.viewPost > div#post > footer#votes{
+    grid-area: votes;
+    
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    justify-content: space-evenly;
+    justify-items: flex-start;
+
+    margin-top: 25px;
+    width: auto;
+    height: auto;
+} 
+.viewPost > div#post > footer#votes > div#upvotes > p, .viewPost > div#post > footer#votes > div#downvotes > p{
+    text-align: center;
+    margin: 0;
+}
+.viewPost > div#post > footer#votes > div#upvotes, .viewPost > div#post > footer#votes > div#downvotes{ background-color: var(--maincolor_bckgrnd);
+    box-shadow: 0px 0px 2px 1px var(--color_separator);
+    transition: background-color 0.5s;
+    padding: 1px;
+}
+.viewPost > div#post > footer#votes > div#upvotes:hover, .viewPost > div#post > footer#votes > div#downvotes:hover{ background-color: var(--color_manao2); color: white; }
+
+/*COMMENT SECTION FOR FULL POST VIEW*/
+.viewPost > div#comments {
+    margin-top: 1em;
+}
+.viewPost > div#comment_section {
+    margin-top: 1em;
+}
+.viewPost > div#comments > article#posted{
+    background-color: var(--maincolor_bckgrnd);
+
+    border-radius: 3px 3px;
+    padding: 5px 5px;
+    text-align: left;
+    font-size: 1em;
+    font-family: 'Julius Sans One', sans-serif;
+}
+.viewPost > div#comments > article#posted > div#commentText, .viewPost > div#comment_section > label#user_to_post, .viewPost > div#comment_section > label#comment_to_post{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    margin: 0 auto;
+    padding: 2px;
+    font-style: italic;
+
+}
+.viewPost > div#comment_section > label#comment_to_post { display: inline-flex; position: static; }
+.viewPost > div#comment_section > label#user_to_post, .viewPost > div#comment_section > label#user_to_post{ font-style: italic; }
+.viewPost > div#comment_section > label#user_to_post, .viewPost > div#comment_section > label#comment_to_post > textarea {
+    font-style: italic;
+    resize: none;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.viewPost > div#comment_section > input[type="submit"], .viewPost > div#comment_section > form > input[value="BACK"]  {
+    background-color: rgb(255, 133, 124);
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+
+    display: flex;
+    padding: 14px 50px;
+    margin-top: 2em;
+    margin-left: 16px;
+    border: none;
+    border-radius: 5px;
 }
